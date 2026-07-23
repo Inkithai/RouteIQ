@@ -1,6 +1,6 @@
 # 🚌 RouteIQ 2.0 - AI-Powered Transit Telemetry & SaaS Fleet Platform
 
-[![Build Status](https://img.shields.io/badge/build-passing-brightgreen.svg)](https://github.com/<your-username>/routeiq)
+[![Build Status](https://img.shields.io/badge/build-passing-brightgreen.svg)](https://github.com/Inkithai/RouteIQ)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 [![React](https://img.shields.io/badge/frontend-React%2018%20%2B%20Vite%205-61dafb.svg)](https://react.dev)
 [![Node.js](https://img.shields.io/badge/backend-Node.js%2020%20%2B%20Express%204-green.svg)](https://nodejs.org)
@@ -93,8 +93,8 @@ repo/
 
 ### 1. Clone Repository & Install Dependencies
 ```bash
-git clone https://github.com/<your-username>/routeiq.git
-cd Bus-tracking-mern
+git clone https://github.com/Inkithai/RouteIQ.git
+cd RouteIQ
 
 # Install backend dependencies
 cd backend && npm install
