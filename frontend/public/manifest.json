@@ -1,0 +1,16 @@
+{
+  "short_name": "RouteIQ",
+  "name": "RouteIQ - Real-Time Bus Tracker & Ticket Hub",
+  "icons": [
+    {
+      "src": "vite.svg",
+      "sizes": "192x192 512x512",
+      "type": "image/svg+xml"
+    }
+  ],
+  "start_url": "/",
+  "background_color": "#090d16",
+  "theme_color": "#e11d48",
+  "display": "standalone",
+  "orientation": "portrait"
+}

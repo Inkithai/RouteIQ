@@ -1,0 +1,19 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    @apply bg-gradient-to-br from-indigo-950 via-purple-950 to-slate-900 text-white font-sans antialiased;
+  }
+}
+
+.custom-popup .leaflet-popup-content-wrapper {
+  background-color: #1e1b4b !important;
+  color: #f8fafc !important;
+  border-radius: 1rem !important;
+  border: 1px solid #6366f1 !important;
+  box-shadow: 0 10px 25px -5px rgba(99, 102, 241, 0.3) !important;
+}
+
+.custom-popup .leaflet-popup-tip {
+  background-color: #1e1b4b !important;
+}

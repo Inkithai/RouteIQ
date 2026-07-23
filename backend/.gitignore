@@ -1,0 +1,23 @@
+# Node Dependencies
+node_modules/
+
+# Environment Secrets
+.env
+.env.*
+!.env.example
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+
+# Coverage
+coverage/
+
+# OS Metadata
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
