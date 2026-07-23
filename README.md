@@ -1,4 +1,4 @@
-# 🚌 RouteIQ 2.0 - AI-Powered Transit Telemetry & SaaS Fleet Platform
+# 🚌 RouteIQ - AI-Powered Transit Telemetry & SaaS Fleet Platform
 
 [![Build Status](https://img.shields.io/badge/build-passing-brightgreen.svg)](https://github.com/<your-username>/routeiq)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
