@@ -48,25 +48,25 @@ export default function Navbar() {
   const navItemClass = (path) =>
     `px-3 py-2 rounded-xl text-xs font-bold transition-all flex items-center gap-1.5 ${
       isActive(path)
-        ? "bg-rose-600 text-white shadow-lg shadow-rose-600/30"
+        ? "bg-lime-400 text-slate-950 shadow-lg shadow-lime-400/20"
         : "text-slate-300 hover:text-white hover:bg-slate-800/80"
     }`;
 
   return (
     <nav className="sticky top-0 z-50 bg-slate-950/90 border-b border-slate-800/80 backdrop-blur-xl text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
+        <div className="flex items-center justify-between h-[68px]">
           {/* Brand Logo */}
           <Link to="/" className="flex items-center gap-3 group">
-            <div className="p-2.5 bg-gradient-to-tr from-rose-600 to-rose-500 rounded-2xl text-white shadow-lg shadow-rose-600/30 group-hover:scale-105 transition-transform">
+            <div className="p-2.5 bg-gradient-to-tr from-lime-400 to-lime-400 rounded-lg text-slate-950 shadow-lg shadow-lime-400/20 group-hover:scale-105 transition-transform">
               <Bus className="w-5 h-5" />
             </div>
             <div>
               <div className="flex items-center gap-1.5">
                 <span className="text-xl font-black tracking-tight text-white">
-                  Route<span className="text-rose-500">IQ</span>
+                  Route<span className="text-lime-400">IQ</span>
                 </span>
-                <span className="px-2 py-0.5 text-[9px] uppercase tracking-widest font-black bg-rose-500/20 text-rose-300 rounded-full border border-rose-500/30">
+                <span className="px-2 py-0.5 text-[9px] uppercase tracking-widest font-black bg-lime-400/20 text-lime-200 rounded-full border border-lime-400/30">
                   ENTERPRISE
                 </span>
               </div>
@@ -79,7 +79,7 @@ export default function Navbar() {
               {t("nav_home")}
             </Link>
             <Link to="/BusMapPreview" className={navItemClass("/BusMapPreview")}>
-              <Navigation className="w-3.5 h-3.5 text-rose-400" /> {t("nav_tracker")}
+              <Navigation className="w-3.5 h-3.5 text-lime-300" /> {t("nav_tracker")}
               <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
             </Link>
             <Link to="/book" className={navItemClass("/book")}>
@@ -110,13 +110,13 @@ export default function Navbar() {
               <div className="flex items-center gap-3 pl-2 border-l border-slate-800">
                 <div className="text-right">
                   <p className="text-xs font-extrabold text-slate-200">{authState.user?.name || "User"}</p>
-                  <p className="text-[10px] uppercase font-bold text-rose-400 tracking-wider">
+                  <p className="text-[10px] uppercase font-bold text-lime-300 tracking-wider">
                     {authState.role}
                   </p>
                 </div>
                 <button
                   onClick={handleLogout}
-                  className="p-2 text-slate-400 hover:text-rose-400 hover:bg-slate-800 rounded-xl transition"
+                  className="p-2 text-slate-400 hover:text-lime-300 hover:bg-slate-800 rounded-xl transition"
                   title="Log Out"
                 >
                   <LogOut className="w-4 h-4" />
@@ -132,7 +132,7 @@ export default function Navbar() {
                 </Link>
                 <Link
                   to="/Signup"
-                  className="px-4 py-2 text-xs font-extrabold bg-rose-600 hover:bg-rose-500 text-white rounded-xl transition shadow-lg shadow-rose-600/30"
+                  className="px-4 py-2 text-xs font-extrabold bg-lime-400 hover:bg-lime-400 text-slate-950 rounded-xl transition shadow-lg shadow-lime-400/20"
                 >
                   Sign Up
                 </Link>
@@ -188,7 +188,7 @@ export default function Navbar() {
                   handleLogout();
                   setMobileMenuOpen(false);
                 }}
-                className="w-full py-2.5 bg-slate-900 border border-slate-800 text-rose-400 font-bold text-xs rounded-xl flex items-center justify-center gap-2"
+                className="w-full py-2.5 bg-slate-900 border border-slate-800 text-lime-300 font-bold text-xs rounded-xl flex items-center justify-center gap-2"
               >
                 <LogOut className="w-4 h-4" /> Log Out
               </button>
@@ -204,7 +204,7 @@ export default function Navbar() {
                 <Link
                   to="/Signup"
                   onClick={() => setMobileMenuOpen(false)}
-                  className="py-2.5 text-center font-extrabold text-xs text-white bg-rose-600 rounded-xl shadow-lg shadow-rose-600/30"
+                  className="py-2.5 text-center font-extrabold text-xs text-slate-950 bg-lime-400 rounded-xl shadow-lg shadow-lime-400/20"
                 >
                   Sign Up
                 </Link>
