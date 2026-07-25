@@ -64,7 +64,7 @@ const SRI_LANKA_STOPS = [
 
 function createBusIcon(status = "Active") {
   const isDelayed = status === "Delayed";
-  const color = isDelayed ? "#f43f5e" : "#e11d48";
+  const color = isDelayed ? "#ef4444" : "#2563eb";
 
   const svgMarker = `
     <div style="
@@ -173,18 +173,18 @@ export default function BusMapPreview({ buses = [] }) {
       {/* Sri Lanka Live Telemetry Overlay */}
       <div className="absolute top-4 left-4 z-[1000] bg-slate-900/90 backdrop-blur-md px-4 py-2 rounded-2xl border border-slate-700 shadow-lg flex items-center gap-3 text-xs font-extrabold text-white">
         <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-ping"></span>
-        <Radio className="w-4 h-4 text-rose-500" /> 🇱🇰 Sri Lanka Express Telemetry Radar
+        <Radio className="w-4 h-4 text-blue-500" /> 🇱🇰 Sri Lanka Express Telemetry Radar
       </div>
 
       {/* Colombo Route Legend */}
       <div className="absolute bottom-4 left-4 z-[1000] bg-slate-900/90 backdrop-blur-md px-4 py-3 rounded-2xl border border-slate-700 shadow-lg text-xs text-white space-y-1.5 max-w-[240px]">
         <p className="font-extrabold text-white text-[10px] uppercase tracking-wider mb-2">🗺️ Colombo Route Corridors</p>
         <div className="flex items-center gap-2">
-          <span className="w-4 h-1 rounded-full bg-rose-500"></span>
+          <span className="w-4 h-1 rounded-full bg-blue-600"></span>
           <span className="text-[11px]">Colombo → Kandy (A1)</span>
         </div>
         <div className="flex items-center gap-2">
-          <span className="w-4 h-1 rounded-full bg-blue-600"></span>
+          <span className="w-4 h-1 rounded-full bg-indigo-600"></span>
           <span className="text-[11px]">Colombo → Galle (E01)</span>
         </div>
         <div className="flex items-center gap-2">
@@ -207,12 +207,12 @@ export default function BusMapPreview({ buses = [] }) {
         {/* Colombo → Kandy Expressway (A1) */}
         <Polyline
           positions={COLOMBO_KANDY_POLYLINE}
-          pathOptions={{ color: "#e11d48", weight: 5, opacity: 0.85, dashArray: "10, 8" }}
+          pathOptions={{ color: "#2563eb", weight: 5, opacity: 0.85, dashArray: "10, 8" }}
         />
         {/* Colombo → Galle Southern Expressway (E01) */}
         <Polyline
           positions={COLOMBO_GALLE_POLYLINE}
-          pathOptions={{ color: "#2563eb", weight: 4, opacity: 0.7, dashArray: "8, 6" }}
+          pathOptions={{ color: "#4f46e5", weight: 4, opacity: 0.7, dashArray: "8, 6" }}
         />
         {/* Colombo → Negombo / Airport (A3) */}
         <Polyline
@@ -262,7 +262,7 @@ export default function BusMapPreview({ buses = [] }) {
                     <span
                       className={`px-2 py-0.5 text-[10px] font-black rounded-full ${
                         bus.status === "Delayed"
-                          ? "bg-rose-100 text-rose-700"
+                          ? "bg-blue-100 text-blue-700"
                           : "bg-emerald-100 text-emerald-700"
                       }`}
                     >
@@ -277,7 +277,7 @@ export default function BusMapPreview({ buses = [] }) {
                   </p>
                   <div className="mt-2 pt-2 border-t flex items-center justify-between text-[11px] font-mono">
                     <span className="text-emerald-600 font-bold">⚡ {bus.speedKmph || 50} km/h</span>
-                    <span className="text-rose-600 font-bold">⏱ ETA: {etaMinutes} mins</span>
+                    <span className="text-blue-600 font-bold">⏱ ETA: {etaMinutes} mins</span>
                   </div>
                 </div>
               </Popup>

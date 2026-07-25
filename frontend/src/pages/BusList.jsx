@@ -5,7 +5,7 @@ export default function BusList({ buses = [] }) {
   return (
     <div className="bg-white border border-slate-200 rounded-3xl p-6 shadow-sm">
       <h2 className="text-xl font-black text-slate-900 mb-4 flex items-center gap-2">
-        <Bus className="w-5 h-5 text-rose-600" /> Fleet Vehicle Roster ({buses.length})
+        <Bus className="w-5 h-5 text-blue-600" /> Fleet Vehicle Roster ({buses.length})
       </h2>
 
       <div className="overflow-x-auto">
@@ -39,7 +39,7 @@ export default function BusList({ buses = [] }) {
                     <span
                       className={`px-2.5 py-0.5 text-[10px] font-extrabold uppercase rounded-full ${
                         bus.status === "Delayed"
-                          ? "bg-rose-100 text-rose-700"
+                          ? "bg-blue-100 text-blue-700"
                           : "bg-emerald-100 text-emerald-700"
                       }`}
                     >

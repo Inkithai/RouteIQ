@@ -52,14 +52,14 @@ export default function AdminAllBookings() {
                       {b.from} → {b.to}
                     </td>
                     <td className="p-4 font-mono text-xs text-slate-600">{b.travelDate}</td>
-                    <td className="p-4 font-bold text-rose-600">{b.seats?.join(", ")}</td>
+                    <td className="p-4 font-bold text-blue-600">{b.seats?.join(", ")}</td>
                     <td className="p-4 font-extrabold text-slate-900">LKR {b.amount}</td>
                     <td className="p-4">
                       <span
                         className={`px-2.5 py-0.5 text-[10px] font-extrabold uppercase rounded-full ${
                           b.status === "confirmed"
                             ? "bg-emerald-100 text-emerald-700"
-                            : "bg-rose-100 text-rose-700"
+                            : "bg-blue-100 text-blue-700"
                         }`}
                       >
                         {b.status}

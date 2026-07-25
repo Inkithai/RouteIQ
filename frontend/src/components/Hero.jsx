@@ -5,17 +5,17 @@ function Hero() {
   return (
     <section className="relative overflow-hidden w-full">
       {/* Background */}
-      <div className="absolute inset-0 bg-gradient-to-b from-rose-50 via-white to-white"></div>
-      <div className="absolute -top-24 -right-24 h-72 w-72 rounded-full bg-rose-200/40 blur-3xl"></div>
-      <div className="absolute -bottom-24 -left-24 h-72 w-72 rounded-full bg-fuchsia-200/25 blur-3xl"></div>
-      <div className="absolute top-24 left-1/2 -translate-x-1/2 h-[520px] w-[520px] rounded-full bg-gradient-to-tr from-rose-200/30 via-white to-fuchsia-200/20 blur-3xl"></div>
+      <div className="absolute inset-0 bg-gradient-to-b from-blue-50 via-white to-white"></div>
+      <div className="absolute -top-24 -right-24 h-72 w-72 rounded-full bg-blue-200/40 blur-3xl"></div>
+      <div className="absolute -bottom-24 -left-24 h-72 w-72 rounded-full bg-violet-200/25 blur-3xl"></div>
+      <div className="absolute top-24 left-1/2 -translate-x-1/2 h-[520px] w-[520px] rounded-full bg-gradient-to-tr from-blue-200/30 via-white to-violet-200/20 blur-3xl"></div>
 
       <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-16 sm:pt-20 pb-10 sm:pb-14">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
           {/* Left */}
           <div className="lg:col-span-7">
             <div className="flex flex-wrap items-center gap-2">
-              <p className="text-xs font-semibold tracking-wider text-rose-700 bg-rose-50 border border-rose-100 px-3 py-1 rounded-full w-fit">
+              <p className="text-xs font-semibold tracking-wider text-blue-700 bg-blue-50 border border-blue-100 px-3 py-1 rounded-full w-fit">
                 SAVE MORE ON EVERY TRIP
               </p>
               <p className="text-xs font-semibold tracking-wider text-slate-700 bg-white border border-slate-200 px-3 py-1 rounded-full w-fit">
@@ -24,7 +24,7 @@ function Hero() {
             </div>
             <h2 className="mt-4 text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight tracking-tight text-slate-900">
               Book bus tickets.
-              <span className="text-rose-600"> Track your ride live.</span>
+              <span className="text-blue-600"> Track your ride live.</span>
               <br />
               Travel with confidence.
             </h2>
@@ -34,10 +34,10 @@ function Hero() {
 
             {/* Search Form */}
             <div className="mt-7 bg-white rounded-3xl p-4 sm:p-6 shadow-sm border border-slate-100">
-              <div className="p-4 sm:p-5 bg-gradient-to-r from-rose-50 to-fuchsia-50 rounded-2xl border border-white/60">
+              <div className="p-4 sm:p-5 bg-gradient-to-r from-blue-50 to-violet-50 rounded-2xl border border-white/60">
                 <div className="grid grid-cols-1 md:grid-cols-12 gap-4">
-                  <div className="md:col-span-4 h-14 flex items-center bg-white border border-slate-200 rounded-2xl shadow-sm focus-within:ring-2 focus-within:ring-rose-300 transition">
-                    <span className="px-3 text-rose-600 text-2xl">🏙️</span>
+                  <div className="md:col-span-4 h-14 flex items-center bg-white border border-slate-200 rounded-2xl shadow-sm focus-within:ring-2 focus-within:ring-blue-300 transition">
+                    <span className="px-3 text-blue-600 text-2xl">🏙️</span>
                     <input
                       type="text"
                       placeholder="From (e.g., Colombo Fort)"
@@ -45,8 +45,8 @@ function Hero() {
                     />
                   </div>
 
-                  <div className="md:col-span-4 h-14 flex items-center bg-white border border-slate-200 rounded-2xl shadow-sm focus-within:ring-2 focus-within:ring-rose-300 transition">
-                    <span className="px-3 text-rose-600 text-2xl">🏙️</span>
+                  <div className="md:col-span-4 h-14 flex items-center bg-white border border-slate-200 rounded-2xl shadow-sm focus-within:ring-2 focus-within:ring-blue-300 transition">
+                    <span className="px-3 text-blue-600 text-2xl">🏙️</span>
                     <input
                       type="text"
                       placeholder="To (e.g., Kandy)"
@@ -54,15 +54,15 @@ function Hero() {
                     />
                   </div>
 
-                  <div className="md:col-span-2 h-14 flex items-center bg-white border border-slate-200 rounded-2xl shadow-sm focus-within:ring-2 focus-within:ring-rose-300 transition">
-                    <span className="px-3 text-rose-600 text-xl">📅</span>
+                  <div className="md:col-span-2 h-14 flex items-center bg-white border border-slate-200 rounded-2xl shadow-sm focus-within:ring-2 focus-within:ring-blue-300 transition">
+                    <span className="px-3 text-blue-600 text-xl">📅</span>
                     <input
                       type="date"
                       className="w-full h-full px-1 border-none outline-none bg-transparent text-slate-900"
                     />
                   </div>
 
-                  <button className="md:col-span-2 h-14 bg-rose-600 hover:bg-rose-700 text-white px-6 rounded-2xl font-semibold shadow-sm transition">
+                  <button className="md:col-span-2 h-14 bg-blue-600 hover:bg-blue-700 text-white px-6 rounded-2xl font-semibold shadow-sm transition">
                     Search Buses
                   </button>
                 </div>
@@ -71,7 +71,7 @@ function Hero() {
               <div className="mt-5 flex flex-wrap gap-3">
                 <Link
                   to="/book"
-                  className="bg-rose-600 hover:bg-rose-700 text-white px-4 py-2.5 rounded-xl shadow-sm transition font-semibold"
+                  className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2.5 rounded-xl shadow-sm transition font-semibold"
                 >
                   Book Ticket
                 </Link>
@@ -90,7 +90,7 @@ function Hero() {
                 {["Kandy", "Galle", "Negombo", "Nuwara Eliya", "Jaffna", "Matara"].map((d) => (
                   <span
                     key={d}
-                    className="text-sm bg-white border border-slate-200 hover:border-rose-200 hover:bg-rose-50/60 transition px-3 py-1.5 rounded-full text-slate-800"
+                    className="text-sm bg-white border border-slate-200 hover:border-blue-200 hover:bg-blue-50/60 transition px-3 py-1.5 rounded-full text-slate-800"
                   >
                     {d}
                   </span>
@@ -138,7 +138,7 @@ function Hero() {
                         <p className="text-xs text-white/80">From</p>
                         <p className="text-lg font-extrabold">Colombo</p>
                       </div>
-                      <div className="text-rose-300 font-extrabold">→</div>
+                      <div className="text-blue-300 font-extrabold">→</div>
                       <div className="text-right">
                         <p className="text-xs text-white/80">To</p>
                         <p className="text-lg font-extrabold">Kandy</p>

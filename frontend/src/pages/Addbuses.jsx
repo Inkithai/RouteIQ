@@ -36,7 +36,7 @@ function Addbuses() {
   ).size;
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-white via-rose-50/30 to-white">
+    <div className="min-h-screen bg-gradient-to-b from-white via-blue-50/30 to-white">
       {/* Mobile sidebar overlay */}
       {sidebarOpen && (
         <button
@@ -66,7 +66,7 @@ function Addbuses() {
           >
             <div className="flex items-center justify-between gap-3">
               <div>
-                <p className="text-xs font-semibold tracking-wider text-rose-700 bg-rose-50 border border-rose-100 px-3 py-1 rounded-full w-fit">
+                <p className="text-xs font-semibold tracking-wider text-blue-700 bg-blue-50 border border-blue-100 px-3 py-1 rounded-full w-fit">
                   ADMIN
                 </p>
                 <h2 className="mt-3 text-lg font-extrabold text-slate-900">Dashboard</h2>
@@ -91,7 +91,7 @@ function Addbuses() {
               <div className="grid gap-2">
                 <a
                   href="#add-bus"
-                  className="rounded-2xl border border-rose-200 bg-rose-50 px-4 py-3 text-slate-900 hover:bg-rose-100 transition-colors"
+                  className="rounded-2xl border border-blue-200 bg-blue-50 px-4 py-3 text-slate-900 hover:bg-blue-100 transition-colors"
                 >
                   <p className="text-sm font-semibold">➕ Add Bus</p>
                   <p className="text-xs text-slate-600 mt-0.5">Create and assign a route</p>
@@ -140,7 +140,7 @@ function Addbuses() {
                   </button>
 
                   <div>
-                    <p className="text-xs font-semibold tracking-wider text-rose-700 bg-rose-50 border border-rose-100 px-3 py-1 rounded-full w-fit">
+                    <p className="text-xs font-semibold tracking-wider text-blue-700 bg-blue-50 border border-blue-100 px-3 py-1 rounded-full w-fit">
                       ADMIN
                     </p>
                     <h1 className="text-2xl sm:text-3xl font-extrabold text-slate-900">
@@ -161,7 +161,7 @@ function Addbuses() {
                   </Link>
                   <Link
                     to="/Login"
-                    className="bg-rose-600 text-white px-4 py-2.5 rounded-xl font-semibold hover:bg-rose-700 transition-colors shadow-sm"
+                    className="bg-blue-600 text-white px-4 py-2.5 rounded-xl font-semibold hover:bg-blue-700 transition-colors shadow-sm"
                   >
                     Login
                   </Link>
@@ -171,7 +171,7 @@ function Addbuses() {
               <div className="mt-4 flex flex-wrap gap-2">
                 <a
                   href="#add-bus"
-                  className="bg-rose-600 text-white px-4 py-2.5 rounded-xl font-semibold hover:bg-rose-700 transition-colors shadow-sm"
+                  className="bg-blue-600 text-white px-4 py-2.5 rounded-xl font-semibold hover:bg-blue-700 transition-colors shadow-sm"
                 >
                   Add Bus
                 </a>
