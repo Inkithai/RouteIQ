@@ -7,10 +7,10 @@ function Footer() {
         <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
           <div>
             <p className="text-xl font-extrabold text-slate-900 tracking-tight">
-              Bus<span className="text-rose-600">Go</span>
+              Route<span className="text-rose-600">IQ</span>
             </p>
             <p className="mt-2 text-sm text-slate-600 max-w-md">
-              A clean RedBus-style UI with MERN + Socket.io for real-time bus tracking.
+              Sri Lanka's smart bus booking &amp; live tracking platform — Colombo metro routes, expressways &amp; island-wide journeys.
             </p>
           </div>
 

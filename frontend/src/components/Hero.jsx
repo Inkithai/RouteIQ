@@ -40,7 +40,7 @@ function Hero() {
                     <span className="px-3 text-rose-600 text-2xl">🏙️</span>
                     <input
                       type="text"
-                      placeholder="From (e.g., Mumbai)"
+                      placeholder="From (e.g., Colombo Fort)"
                       className="w-full h-full px-1 border-none outline-none bg-transparent text-slate-900 placeholder:text-slate-400"
                     />
                   </div>
@@ -49,7 +49,7 @@ function Hero() {
                     <span className="px-3 text-rose-600 text-2xl">🏙️</span>
                     <input
                       type="text"
-                      placeholder="To (e.g., Pune)"
+                      placeholder="To (e.g., Kandy)"
                       className="w-full h-full px-1 border-none outline-none bg-transparent text-slate-900 placeholder:text-slate-400"
                     />
                   </div>
@@ -87,7 +87,7 @@ function Hero() {
             <div className="mt-6">
               <p className="text-sm font-extrabold text-slate-900">Trending destinations</p>
               <div className="mt-3 flex flex-wrap gap-2">
-                {["Goa", "Manali", "Jaipur", "Pune", "Udaipur", "Rishikesh"].map((d) => (
+                {["Kandy", "Galle", "Negombo", "Nuwara Eliya", "Jaffna", "Matara"].map((d) => (
                   <span
                     key={d}
                     className="text-sm bg-white border border-slate-200 hover:border-rose-200 hover:bg-rose-50/60 transition px-3 py-1.5 rounded-full text-slate-800"
@@ -136,12 +136,12 @@ function Hero() {
                     <div className="flex items-center justify-between">
                       <div>
                         <p className="text-xs text-white/80">From</p>
-                        <p className="text-lg font-extrabold">Mumbai</p>
+                        <p className="text-lg font-extrabold">Colombo</p>
                       </div>
                       <div className="text-rose-300 font-extrabold">→</div>
                       <div className="text-right">
                         <p className="text-xs text-white/80">To</p>
-                        <p className="text-lg font-extrabold">Pune</p>
+                        <p className="text-lg font-extrabold">Kandy</p>
                       </div>
                     </div>
                   </div>

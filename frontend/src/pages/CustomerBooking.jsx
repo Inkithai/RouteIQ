@@ -146,14 +146,14 @@ export default function CustomerBooking() {
           <div className="mt-6 grid grid-cols-1 sm:grid-cols-3 gap-3 bg-black/20 backdrop-blur p-4 rounded-2xl border border-white/10">
             <input
               type="text"
-              placeholder="From City"
+              placeholder="From (e.g. Colombo Fort)"
               value={from}
               onChange={(e) => setFrom(e.target.value)}
               className="px-4 py-2 bg-slate-900/80 text-white placeholder-slate-400 rounded-xl focus:outline-none border border-slate-700 text-sm"
             />
             <input
               type="text"
-              placeholder="To City"
+              placeholder="To (e.g. Kandy)"
               value={to}
               onChange={(e) => setTo(e.target.value)}
               className="px-4 py-2 bg-slate-900/80 text-white placeholder-slate-400 rounded-xl focus:outline-none border border-slate-700 text-sm"

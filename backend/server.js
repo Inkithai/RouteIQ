@@ -79,7 +79,7 @@ app.get("/api/health", (req, res) => {
 });
 
 app.get("/", (req, res) => {
-  res.send("✅ RouteIQ Engine Engine 2.0 Running & Operational");
+  res.send("✅ RouteIQ Colombo — Sri Lanka Smart Transit Engine 2.0 Running & Operational");
 });
 
 // ⚡ Socket.IO Integration
@@ -117,7 +117,7 @@ app.use(errorHandler);
 
 const PORT = process.env.PORT || 5000;
 server.listen(PORT, () => {
-  console.log(`🚀 Busgo Engine 2.0 server listening on port ${PORT}`);
+  console.log(`🚀 RouteIQ Colombo Engine 2.0 server listening on port ${PORT}`);
 });
 
 module.exports = { app, server };

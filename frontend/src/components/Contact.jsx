@@ -48,7 +48,7 @@ function Contact() {
                   <Phone className="text-rose-600 w-6 h-6 mt-0.5" />
                   <div>
                     <h3 className="font-semibold text-slate-900">Customer Care</h3>
-                    <p className="text-slate-600 text-sm">+91 90000 00000</p>
+                    <p className="text-slate-600 text-sm">+94 11 234 5678</p>
                     <p className="text-slate-500 text-xs mt-1">Booking, cancellations, and trip help</p>
                   </div>
                 </div>
@@ -66,7 +66,7 @@ function Contact() {
                   <MapPin className="text-rose-600 w-6 h-6 mt-0.5" />
                   <div>
                     <h3 className="font-semibold text-slate-900">Head Office</h3>
-                    <p className="text-slate-600 text-sm">Mumbai, Maharashtra</p>
+                    <p className="text-slate-600 text-sm">Colombo 01, Sri Lanka</p>
                     <p className="text-slate-500 text-xs mt-1">Mon–Sat</p>
                   </div>
                 </div>

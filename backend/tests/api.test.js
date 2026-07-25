@@ -26,7 +26,7 @@ assert.strictEqual(decoded.email, 'test@routeiq.io', 'JWT Email mismatch');
 assert.strictEqual(decoded.role, 'customer', 'JWT Role mismatch');
 console.log('  ✅ JWT Token Generation & Verification: PASSED');
 
-// 3. Haversine Distance Formula Test (Delhi to Noida ~20km)
+// 3. Haversine Distance Formula Test (Colombo Fort → Kadawatha ~20km)
 function calculateHaversineDistance(lat1, lon1, lat2, lon2) {
   const R = 6371;
   const dLat = ((lat2 - lat1) * Math.PI) / 180;
@@ -41,7 +41,7 @@ function calculateHaversineDistance(lat1, lon1, lat2, lon2) {
   return R * c;
 }
 
-const distance = calculateHaversineDistance(28.6139, 77.2090, 28.5355, 77.3910);
+const distance = calculateHaversineDistance(6.9271, 79.8612, 7.0840, 79.9926);
 assert.ok(distance > 15 && distance < 25, `Haversine distance out of expected range: ${distance} km`);
 console.log(`  ✅ Spherical Haversine GPS Distance Algorithm (${distance.toFixed(2)} km): PASSED`);
 

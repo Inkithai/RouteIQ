@@ -8,6 +8,19 @@
 
 **RouteIQ** is an enterprise-grade, full-stack transit management, real-time satellite vehicle tracking, and intelligent seat reservation system. Designed as a SaaS-ready multi-tenant platform, it features low-latency WebSocket coordinate streaming, AI-driven traffic arrival estimation, mobile driver location broadcasting, Stripe card checkout, and PWA offline ticket vault storage.
 
+### 🇱🇰 Sri Lanka — Colombo Focus
+
+This build is customized for **Sri Lanka's Western Province** with Colombo as the central transit hub:
+
+- **Pre-seeded Colombo routes**: Colombo Fort ↔ Kandy, Galle, Negombo, Matara, Nuwara Eliya, Jaffna, Gampaha & local Kadawatha corridor
+- **Real Colombo bus stops** with accurate GPS coordinates (Fort, Pettah, Kadawatha, Katunayake Airport, Wellawatte, Panadura, Kalutara, Galle, Matara, etc.)
+- **Multi-corridor map overlays**: A1 Highway, E01 Southern Expressway, A3 Negombo Road & Southern coastal route — each in a distinct color
+- **Sri Lankan Rupee (LKR) pricing** across booking and seat selection
+- **Sri Lankan phone numbers** (+94) and local operator contact details
+- **Trilingual i18n**: English, සිංහල (Sinhala), தமிழ் (Tamil)
+- **Sri Lankan bus registration format** (e.g. `WP-CA-1001`, `SP-GA-1501`)
+- **Realistic SLTB & private operator route names** with distance/duration tuned for local traffic conditions
+
 ---
 
 ## 🌟 Key Platform Features
@@ -121,7 +134,14 @@ STRIPE_SECRET_KEY=sk_test_mock_stripe_key
 VITE_API_BASE_URL=http://localhost:5000
 ```
 
-### 3. Run Development Servers
+### 3. Seed Colombo Routes & Buses
+```bash
+cd backend
+npm run seed:colombo
+```
+This inserts **8 real Colombo transit routes** (Fort → Kandy, Galle, Negombo, Matara, Nuwara Eliya, Jaffna, Gampaha, Kadawatha local) with accurate GPS waypoints, and **12 sample buses** with Sri Lankan registration numbers.
+
+### 4. Run Development Servers
 ```bash
 # Terminal 1: Backend API & WebSocket Server
 cd backend

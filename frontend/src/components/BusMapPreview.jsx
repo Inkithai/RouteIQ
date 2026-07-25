@@ -10,20 +10,56 @@ import { Radio, MapPin } from "lucide-react";
 const API_BASE_URL =
   import.meta.env.VITE_API_BASE_URL || window.location.origin;
 
-// Expressway E04 / A1 Waypoints: Colombo Bastian Mawatha → Kandy Goods Shed
+// Colombo Metropolitan & Expressway Routes
 const COLOMBO_KANDY_POLYLINE = [
-  [6.9271, 79.8612], // Colombo Bastian Mawatha Bus Station
+  [6.9271, 79.8612], // Colombo Fort Bus Station
+  [6.9487, 79.8593], // Pettah Bus Stand
   [7.0840, 79.9926], // Kadawatha Interchange
   [7.2000, 79.9800], // Nittambuwa Station
   [7.2483, 80.3458], // Mawanella Stop
   [7.2906, 80.6337], // Kandy Goods Shed Bus Stand
 ];
 
+const COLOMBO_GALLE_POLYLINE = [
+  [6.9271, 79.8612], // Colombo Fort
+  [6.8890, 79.8531], // Wellawatte
+  [6.7905, 79.9057], // Panadura
+  [6.6833, 79.9000], // Kalutara
+  [6.5833, 80.1500], // Beruwala
+  [6.0535, 80.2208], // Galle Bus Stand
+];
+
+const COLOMBO_NEGOMBO_POLYLINE = [
+  [6.9271, 79.8612], // Colombo Fort
+  [7.0033, 79.8833], // Ja-Ela
+  [7.0833, 79.8833], // Seeduwa
+  [7.1500, 79.8500], // Katunayake Airport
+  [7.2100, 79.8300], // Negombo Bus Stand
+];
+
+const COLOMBO_MATARA_POLYLINE = [
+  [6.9271, 79.8612], // Colombo Fort
+  [6.6833, 79.9000], // Kalutara
+  [6.4500, 80.0500], // Ambalangoda
+  [6.2500, 80.1000], // Hikkaduwa
+  [6.0535, 80.2208], // Galle
+  [5.9485, 80.5353], // Matara Bus Stand
+];
+
 const SRI_LANKA_STOPS = [
-  { name: "Colombo Bastian Mawatha Stand", lat: 6.9271, lng: 79.8612, stopSeq: 1 },
-  { name: "Kadawatha Highway Interchange", lat: 7.0840, lng: 79.9926, stopSeq: 2 },
-  { name: "Mawanella Central Stop", lat: 7.2483, lng: 80.3458, stopSeq: 3 },
-  { name: "Kandy Goods Shed Stand", lat: 7.2906, lng: 80.6337, stopSeq: 4 },
+  { name: "Colombo Fort Bus Station", lat: 6.9271, lng: 79.8612, stopSeq: 1 },
+  { name: "Colombo Pettah Stand", lat: 6.9487, lng: 79.8593, stopSeq: 2 },
+  { name: "Kadawatha Highway Interchange", lat: 7.0840, lng: 79.9926, stopSeq: 3 },
+  { name: "Mawanella Central Stop", lat: 7.2483, lng: 80.3458, stopSeq: 4 },
+  { name: "Kandy Goods Shed Stand", lat: 7.2906, lng: 80.6337, stopSeq: 5 },
+  { name: "Wellawatte Junction", lat: 6.8890, lng: 79.8531, stopSeq: 6 },
+  { name: "Panadura Bus Stand", lat: 6.7905, lng: 79.9057, stopSeq: 7 },
+  { name: "Kalutara South", lat: 6.6833, lng: 79.9000, stopSeq: 8 },
+  { name: "Galle Main Stand", lat: 6.0535, lng: 80.2208, stopSeq: 9 },
+  { name: "Matara Bus Complex", lat: 5.9485, lng: 80.5353, stopSeq: 10 },
+  { name: "Ja-Ela Junction", lat: 7.0033, lng: 79.8833, stopSeq: 11 },
+  { name: "Katunayake Airport", lat: 7.1500, lng: 79.8500, stopSeq: 12 },
+  { name: "Negombo Bus Stand", lat: 7.2100, lng: 79.8300, stopSeq: 13 },
 ];
 
 function createBusIcon(status = "Active") {
@@ -140,6 +176,27 @@ export default function BusMapPreview({ buses = [] }) {
         <Radio className="w-4 h-4 text-rose-500" /> 🇱🇰 Sri Lanka Express Telemetry Radar
       </div>
 
+      {/* Colombo Route Legend */}
+      <div className="absolute bottom-4 left-4 z-[1000] bg-slate-900/90 backdrop-blur-md px-4 py-3 rounded-2xl border border-slate-700 shadow-lg text-xs text-white space-y-1.5 max-w-[240px]">
+        <p className="font-extrabold text-white text-[10px] uppercase tracking-wider mb-2">🗺️ Colombo Route Corridors</p>
+        <div className="flex items-center gap-2">
+          <span className="w-4 h-1 rounded-full bg-rose-500"></span>
+          <span className="text-[11px]">Colombo → Kandy (A1)</span>
+        </div>
+        <div className="flex items-center gap-2">
+          <span className="w-4 h-1 rounded-full bg-blue-600"></span>
+          <span className="text-[11px]">Colombo → Galle (E01)</span>
+        </div>
+        <div className="flex items-center gap-2">
+          <span className="w-4 h-1 rounded-full bg-green-600"></span>
+          <span className="text-[11px]">Colombo → Negombo (A3)</span>
+        </div>
+        <div className="flex items-center gap-2">
+          <span className="w-4 h-1 rounded-full bg-amber-500"></span>
+          <span className="text-[11px]">Colombo → Matara (Southern)</span>
+        </div>
+      </div>
+
       <MapContainer center={validCenter} zoom={9} style={{ height: "100%", width: "100%" }}>
         <TileLayer
           url="https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png"
@@ -147,10 +204,25 @@ export default function BusMapPreview({ buses = [] }) {
         />
         <AutoPan center={validCenter} />
 
-        {/* Highway Polyline Overlay */}
+        {/* Colombo → Kandy Expressway (A1) */}
         <Polyline
           positions={COLOMBO_KANDY_POLYLINE}
           pathOptions={{ color: "#e11d48", weight: 5, opacity: 0.85, dashArray: "10, 8" }}
+        />
+        {/* Colombo → Galle Southern Expressway (E01) */}
+        <Polyline
+          positions={COLOMBO_GALLE_POLYLINE}
+          pathOptions={{ color: "#2563eb", weight: 4, opacity: 0.7, dashArray: "8, 6" }}
+        />
+        {/* Colombo → Negombo / Airport (A3) */}
+        <Polyline
+          positions={COLOMBO_NEGOMBO_POLYLINE}
+          pathOptions={{ color: "#16a34a", weight: 4, opacity: 0.7, dashArray: "8, 6" }}
+        />
+        {/* Colombo → Matara Southern Route */}
+        <Polyline
+          positions={COLOMBO_MATARA_POLYLINE}
+          pathOptions={{ color: "#f59e0b", weight: 3, opacity: 0.6, dashArray: "6, 5" }}
         />
 
         {/* Bus Stop Circle Markers */}

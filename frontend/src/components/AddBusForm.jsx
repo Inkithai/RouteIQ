@@ -11,8 +11,8 @@ export default function AddBusForm({ addBusToList }) {
     busNumber: "",
     driverName: "",
     route: "",
-    latitude: "28.6139",
-    longitude: "77.2090",
+    latitude: "6.9271",
+    longitude: "79.8612",
     busType: "AC",
   });
   const [error, setError] = useState("");
@@ -35,8 +35,8 @@ export default function AddBusForm({ addBusToList }) {
         busNumber: "",
         driverName: "",
         route: "",
-        latitude: "28.6139",
-        longitude: "77.2090",
+        latitude: "6.9271",
+        longitude: "79.8612",
         busType: "AC",
       });
       setError("");
@@ -65,7 +65,7 @@ export default function AddBusForm({ addBusToList }) {
           <input
             type="text"
             required
-            placeholder="e.g. BUS-808"
+            placeholder="e.g. WP-CA-1001"
             value={form.busNumber}
             onChange={(e) => setForm({ ...form, busNumber: e.target.value })}
             className="w-full px-4 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-rose-500"
@@ -89,7 +89,7 @@ export default function AddBusForm({ addBusToList }) {
           <input
             type="text"
             required
-            placeholder="e.g. City Center → Airport"
+            placeholder="e.g. Colombo Fort → Katunayake Airport"
             value={form.route}
             onChange={(e) => setForm({ ...form, route: e.target.value })}
             className="w-full px-4 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-rose-500"
