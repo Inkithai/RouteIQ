@@ -134,26 +134,26 @@ export default function CustomerBooking() {
     <div className="min-h-screen bg-slate-950 text-white py-8 px-4 sm:px-6 lg:px-8">
       <div className="max-w-5xl mx-auto space-y-6">
         {/* Banner */}
-        <div className="bg-gradient-to-r from-rose-700 via-rose-600 to-rose-800 text-white rounded-3xl p-6 sm:p-8 shadow-xl border border-rose-500/30">
-          <div className="flex items-center gap-2 text-xs font-bold text-rose-200 uppercase tracking-widest mb-1">
+        <div className="bg-gradient-to-r from-blue-700 via-blue-600 to-indigo-800 text-white rounded-3xl p-6 sm:p-8 shadow-xl border border-blue-500/30">
+          <div className="flex items-center gap-2 text-xs font-bold text-blue-200 uppercase tracking-widest mb-1">
             <ShieldCheck className="w-4 h-4 text-emerald-400" /> Stripe Commercial Checkout
           </div>
           <h1 className="text-3xl font-black">Reserve Bus Tickets</h1>
-          <p className="text-rose-100 text-sm mt-1">
+          <p className="text-blue-100 text-sm mt-1">
             Real-time seat lock, Stripe checkout encryption & PWA offline ticket storage.
           </p>
 
           <div className="mt-6 grid grid-cols-1 sm:grid-cols-3 gap-3 bg-black/20 backdrop-blur p-4 rounded-2xl border border-white/10">
             <input
               type="text"
-              placeholder="From City"
+              placeholder="From (e.g. Colombo Fort)"
               value={from}
               onChange={(e) => setFrom(e.target.value)}
               className="px-4 py-2 bg-slate-900/80 text-white placeholder-slate-400 rounded-xl focus:outline-none border border-slate-700 text-sm"
             />
             <input
               type="text"
-              placeholder="To City"
+              placeholder="To (e.g. Kandy)"
               value={to}
               onChange={(e) => setTo(e.target.value)}
               className="px-4 py-2 bg-slate-900/80 text-white placeholder-slate-400 rounded-xl focus:outline-none border border-slate-700 text-sm"
@@ -184,11 +184,11 @@ export default function CustomerBooking() {
               </div>
 
               <div className="text-right sm:border-l sm:border-slate-800 sm:pl-6">
-                <p className="text-2xl font-black text-rose-500">LKR 450</p>
+                <p className="text-2xl font-black text-blue-500">LKR 450</p>
                 <p className="text-xs text-slate-500">per seat</p>
                 <button
                   onClick={() => handleSelectSeatsModal(bus)}
-                  className="mt-3 px-6 py-2.5 bg-rose-600 hover:bg-rose-700 text-white font-bold text-xs rounded-xl shadow transition"
+                  className="mt-3 px-6 py-2.5 bg-blue-600 hover:bg-blue-700 text-white font-bold text-xs rounded-xl shadow transition"
                 >
                   Select Seats
                 </button>
@@ -218,7 +218,7 @@ export default function CustomerBooking() {
                 <div
                   className={`mt-4 p-3 rounded-xl text-xs font-bold ${
                     message.type === "error"
-                      ? "bg-rose-950 text-rose-300 border border-rose-800"
+                      ? "bg-blue-950 text-blue-300 border border-blue-800"
                       : "bg-emerald-950 text-emerald-300 border border-emerald-800"
                   }`}
                 >
@@ -246,7 +246,7 @@ export default function CustomerBooking() {
                             isBooked
                               ? "bg-slate-800 text-slate-600 cursor-not-allowed"
                               : isSelected
-                              ? "bg-rose-600 text-white shadow"
+                              ? "bg-blue-600 text-white shadow"
                               : "bg-slate-900 text-slate-300 hover:bg-slate-800 border border-slate-700"
                           }`}
                         >
@@ -264,7 +264,7 @@ export default function CustomerBooking() {
                     <button
                       onClick={handleProceedToPayment}
                       disabled={selectedSeats.length === 0}
-                      className="px-6 py-2.5 bg-rose-600 text-white font-bold text-xs rounded-xl shadow hover:bg-rose-700 disabled:opacity-50"
+                      className="px-6 py-2.5 bg-blue-600 text-white font-bold text-xs rounded-xl shadow hover:bg-blue-700 disabled:opacity-50"
                     >
                       Proceed to Checkout
                     </button>
@@ -277,7 +277,7 @@ export default function CustomerBooking() {
                   <div className="p-4 bg-slate-950 rounded-2xl border border-slate-800">
                     <div className="flex items-center justify-between text-xs text-slate-400 mb-2">
                       <span>Card Payment Gateway</span>
-                      <CreditCard className="w-4 h-4 text-rose-500" />
+                      <CreditCard className="w-4 h-4 text-blue-500" />
                     </div>
                     <p className="text-2xl font-black text-emerald-400">LKR {selectedSeats.length * 450}</p>
                     <p className="text-[10px] text-slate-500 mt-1">Encrypted via 256-bit Stripe SSL</p>

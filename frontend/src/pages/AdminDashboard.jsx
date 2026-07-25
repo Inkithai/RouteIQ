@@ -39,7 +39,7 @@ export default function AdminDashboard() {
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 bg-slate-900 border border-slate-800 p-6 rounded-3xl shadow-xl">
           <div>
             <div className="flex items-center gap-2 mb-2">
-              <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-rose-500/20 text-rose-300 border border-rose-500/30 rounded-full text-xs font-bold uppercase tracking-wider">
+              <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-blue-500/20 text-blue-300 border border-blue-500/30 rounded-full text-xs font-bold uppercase tracking-wider">
                 <Shield className="w-3.5 h-3.5" /> Multi-Tenant Operator Engine
               </span>
               <span className="inline-flex items-center gap-1 px-3 py-1 bg-blue-500/20 text-blue-300 border border-blue-500/30 rounded-full text-xs font-extrabold">
@@ -54,7 +54,7 @@ export default function AdminDashboard() {
             <button
               onClick={() => setActiveTab("fleet")}
               className={`px-4 py-2 rounded-xl text-xs font-extrabold transition ${
-                activeTab === "fleet" ? "bg-rose-600 text-white" : "bg-slate-800 text-slate-300 hover:bg-slate-700"
+                activeTab === "fleet" ? "bg-blue-600 text-white" : "bg-slate-800 text-slate-300 hover:bg-slate-700"
               }`}
             >
               Fleet Roster
@@ -62,7 +62,7 @@ export default function AdminDashboard() {
             <button
               onClick={() => setActiveTab("analytics")}
               className={`px-4 py-2 rounded-xl text-xs font-extrabold transition flex items-center gap-1.5 ${
-                activeTab === "analytics" ? "bg-rose-600 text-white" : "bg-slate-800 text-slate-300 hover:bg-slate-700"
+                activeTab === "analytics" ? "bg-blue-600 text-white" : "bg-slate-800 text-slate-300 hover:bg-slate-700"
               }`}
             >
               <BarChart3 className="w-3.5 h-3.5" /> Analytics
@@ -86,7 +86,7 @@ export default function AdminDashboard() {
               <div className="bg-slate-900 border border-slate-800 p-5 rounded-2xl">
                 <div className="flex items-center justify-between">
                   <span className="text-xs font-bold text-slate-400 uppercase">Registered Fleet</span>
-                  <Bus className="w-5 h-5 text-rose-500" />
+                  <Bus className="w-5 h-5 text-blue-500" />
                 </div>
                 <p className="text-3xl font-black text-white mt-2">{buses.length}</p>
               </div>
@@ -123,10 +123,10 @@ export default function AdminDashboard() {
               <div className="bg-slate-900 border border-slate-800 p-5 rounded-2xl">
                 <div className="flex items-center justify-between text-slate-400">
                   <span className="text-[10px] font-extrabold uppercase">Avg Delay</span>
-                  <Clock className="w-4 h-4 text-rose-400" />
+                  <Clock className="w-4 h-4 text-blue-400" />
                 </div>
                 <p className="text-2xl font-black text-white mt-2">
-                  {analytics?.avgDelayMinutes ?? 2.4} <span className="text-xs text-rose-400">mins</span>
+                  {analytics?.avgDelayMinutes ?? 2.4} <span className="text-xs text-blue-400">mins</span>
                 </p>
                 <p className="text-[10px] text-slate-500 mt-1">Measured across active routes</p>
               </div>
@@ -168,7 +168,7 @@ export default function AdminDashboard() {
             {/* Peak Passenger Hours Histogram */}
             <div className="bg-slate-900 border border-slate-800 p-6 rounded-3xl">
               <h3 className="text-lg font-black text-white mb-4 flex items-center gap-2">
-                <BarChart3 className="w-5 h-5 text-rose-500" /> Peak Passenger Hours Density Histogram
+                <BarChart3 className="w-5 h-5 text-blue-500" /> Peak Passenger Hours Density Histogram
               </h3>
 
               <div className="grid grid-cols-4 sm:grid-cols-8 gap-3 items-end h-48 pt-6 border-b border-slate-800 pb-2">
@@ -190,7 +190,7 @@ export default function AdminDashboard() {
                       </span>
                       <div
                         style={{ height: `${heightPercent}%` }}
-                        className="w-full bg-gradient-to-t from-rose-700 to-rose-500 rounded-t-lg transition-all duration-500 group-hover:bg-rose-400"
+                        className="w-full bg-gradient-to-t from-blue-700 to-blue-500 rounded-t-lg transition-all duration-500 group-hover:bg-blue-400"
                       />
                       <span className="text-[10px] font-mono text-slate-500">{item.hour.split(' ')[0]}</span>
                     </div>

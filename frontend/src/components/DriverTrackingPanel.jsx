@@ -59,7 +59,7 @@ export default function DriverTrackingPanel({ busId }) {
     <div className="bg-slate-900 border border-slate-800 text-white rounded-3xl p-6 shadow-xl">
       <div className="flex items-center justify-between mb-4">
         <div className="flex items-center gap-3">
-          <div className={`p-3 rounded-2xl ${isBroadcasting ? "bg-rose-600 animate-pulse" : "bg-slate-800"}`}>
+          <div className={`p-3 rounded-2xl ${isBroadcasting ? "bg-blue-600 animate-pulse" : "bg-slate-800"}`}>
             <Radio className="w-6 h-6 text-white" />
           </div>
           <div>
@@ -72,7 +72,7 @@ export default function DriverTrackingPanel({ busId }) {
           onClick={() => setIsBroadcasting(!isBroadcasting)}
           className={`px-5 py-2.5 rounded-xl font-bold transition flex items-center gap-2 ${
             isBroadcasting
-              ? "bg-rose-600 hover:bg-rose-700 text-white"
+              ? "bg-blue-600 hover:bg-blue-700 text-white"
               : "bg-emerald-600 hover:bg-emerald-700 text-white"
           }`}
         >
@@ -89,7 +89,7 @@ export default function DriverTrackingPanel({ busId }) {
       </div>
 
       {error && (
-        <div className="p-3 bg-rose-950/80 border border-rose-800 text-rose-300 text-xs rounded-xl mb-4 flex items-center gap-2">
+        <div className="p-3 bg-blue-950/80 border border-blue-800 text-blue-300 text-xs rounded-xl mb-4 flex items-center gap-2">
           <AlertCircle className="w-4 h-4" /> {error}
         </div>
       )}

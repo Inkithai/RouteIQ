@@ -81,7 +81,7 @@ export default function MyBookings() {
                       className={`px-2.5 py-0.5 text-[10px] font-extrabold uppercase rounded-full ${
                         b.status === "confirmed"
                           ? "bg-emerald-500/20 text-emerald-400 border border-emerald-500/30"
-                          : "bg-rose-500/20 text-rose-400 border border-rose-500/30"
+                          : "bg-blue-500/20 text-blue-400 border border-blue-500/30"
                       }`}
                     >
                       {b.status}
@@ -92,7 +92,7 @@ export default function MyBookings() {
                     {b.from} → {b.to}
                   </h3>
                   <p className="text-xs text-slate-400 font-medium mt-1">
-                    Seats Reserved: <strong className="text-rose-400">{b.seats?.join(", ")}</strong>
+                    Seats Reserved: <strong className="text-blue-400">{b.seats?.join(", ")}</strong>
                   </p>
                 </div>
 

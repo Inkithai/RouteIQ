@@ -49,7 +49,7 @@ export default function AiChatbotModal() {
       {!isOpen && (
         <button
           onClick={() => setIsOpen(true)}
-          className="p-4 bg-gradient-to-tr from-rose-600 to-rose-500 hover:from-rose-500 hover:to-rose-600 text-white rounded-full shadow-2xl shadow-rose-600/50 flex items-center gap-2 font-extrabold text-xs transition transform hover:scale-105"
+          className="p-4 bg-gradient-to-tr from-blue-600 to-blue-500 hover:from-blue-500 hover:to-blue-600 text-white rounded-full shadow-2xl shadow-blue-600/50 flex items-center gap-2 font-extrabold text-xs transition transform hover:scale-105"
         >
           <Bot className="w-6 h-6 animate-bounce" />
           <span className="hidden sm:inline">Ask RouteIQ AI</span>
@@ -61,7 +61,7 @@ export default function AiChatbotModal() {
           {/* Header */}
           <div className="p-4 bg-slate-950 border-b border-slate-800 flex items-center justify-between text-white">
             <div className="flex items-center gap-2">
-              <div className="p-2 bg-rose-500/20 text-rose-400 rounded-xl">
+              <div className="p-2 bg-blue-500/20 text-blue-400 rounded-xl">
                 <Sparkles className="w-4 h-4" />
               </div>
               <div>
@@ -87,7 +87,7 @@ export default function AiChatbotModal() {
                 <div
                   className={`max-w-[80%] p-3 rounded-2xl text-xs leading-relaxed ${
                     m.sender === "user"
-                      ? "bg-rose-600 text-white font-medium"
+                      ? "bg-blue-600 text-white font-medium"
                       : "bg-slate-800 text-slate-200 border border-slate-700"
                   }`}
                 >
@@ -96,7 +96,7 @@ export default function AiChatbotModal() {
               </div>
             ))}
             {loading && (
-              <div className="text-[10px] text-rose-400 font-bold animate-pulse">
+              <div className="text-[10px] text-blue-400 font-bold animate-pulse">
                 AI Assistant is thinking...
               </div>
             )}
@@ -109,12 +109,12 @@ export default function AiChatbotModal() {
               placeholder="Type message or ask fare/ETA..."
               value={input}
               onChange={(e) => setInput(e.target.value)}
-              className="flex-1 px-4 py-2 bg-slate-900 border border-slate-800 rounded-xl text-xs text-white focus:outline-none focus:border-rose-500"
+              className="flex-1 px-4 py-2 bg-slate-900 border border-slate-800 rounded-xl text-xs text-white focus:outline-none focus:border-blue-500"
             />
             <button
               type="submit"
               disabled={loading}
-              className="p-2.5 bg-rose-600 hover:bg-rose-700 text-white rounded-xl transition disabled:opacity-50"
+              className="p-2.5 bg-blue-600 hover:bg-blue-700 text-white rounded-xl transition disabled:opacity-50"
             >
               <Send className="w-4 h-4" />
             </button>

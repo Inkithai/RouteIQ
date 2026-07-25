@@ -3,12 +3,12 @@ import { Link } from "react-router-dom";
 
 function CustomerDashboard() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-white via-rose-50/30 to-white">
+    <div className="min-h-screen bg-gradient-to-b from-white via-blue-50/30 to-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-6 sm:py-8">
         <div className="bg-white/80 backdrop-blur supports-[backdrop-filter]:bg-white/60 border border-slate-100 rounded-3xl shadow-sm p-4 sm:p-5">
           <div className="flex items-start sm:items-center justify-between gap-4 flex-wrap">
             <div>
-              <p className="text-xs font-semibold tracking-wider text-rose-700 bg-rose-50 border border-rose-100 px-3 py-1 rounded-full w-fit">
+              <p className="text-xs font-semibold tracking-wider text-blue-700 bg-blue-50 border border-blue-100 px-3 py-1 rounded-full w-fit">
                 MY ACCOUNT
               </p>
               <h1 className="mt-3 text-2xl sm:text-3xl font-extrabold text-slate-900">
@@ -22,7 +22,7 @@ function CustomerDashboard() {
             <div className="flex items-center gap-2">
               <Link
                 to="/Login"
-                className="bg-rose-600 text-white px-4 py-2.5 rounded-xl font-semibold hover:bg-rose-700 transition-colors shadow-sm"
+                className="bg-blue-600 text-white px-4 py-2.5 rounded-xl font-semibold hover:bg-blue-700 transition-colors shadow-sm"
               >
                 Account
               </Link>
@@ -35,7 +35,7 @@ function CustomerDashboard() {
             to="/book"
             className="bg-white border border-slate-100 rounded-3xl p-6 shadow-sm hover:shadow-md transition"
           >
-            <p className="text-xs font-semibold tracking-wider text-rose-700 bg-rose-50 border border-rose-100 px-3 py-1 rounded-full w-fit">
+            <p className="text-xs font-semibold tracking-wider text-blue-700 bg-blue-50 border border-blue-100 px-3 py-1 rounded-full w-fit">
               BOOK
             </p>
             <h2 className="mt-4 text-xl font-extrabold text-slate-900">Book Ticket</h2>
@@ -48,7 +48,7 @@ function CustomerDashboard() {
             to="/dashboard/customer/bookings"
             className="bg-white border border-slate-100 rounded-3xl p-6 shadow-sm hover:shadow-md transition"
           >
-            <p className="text-xs font-semibold tracking-wider text-rose-700 bg-rose-50 border border-rose-100 px-3 py-1 rounded-full w-fit">
+            <p className="text-xs font-semibold tracking-wider text-blue-700 bg-blue-50 border border-blue-100 px-3 py-1 rounded-full w-fit">
               TICKETS
             </p>
             <h2 className="mt-4 text-xl font-extrabold text-slate-900">My Bookings</h2>
@@ -61,7 +61,7 @@ function CustomerDashboard() {
             to="/BusMapPreview"
             className="bg-white border border-slate-100 rounded-3xl p-6 shadow-sm hover:shadow-md transition"
           >
-            <p className="text-xs font-semibold tracking-wider text-rose-700 bg-rose-50 border border-rose-100 px-3 py-1 rounded-full w-fit">
+            <p className="text-xs font-semibold tracking-wider text-blue-700 bg-blue-50 border border-blue-100 px-3 py-1 rounded-full w-fit">
               LIVE
             </p>
             <h2 className="mt-4 text-xl font-extrabold text-slate-900">Live Tracking</h2>
@@ -74,7 +74,7 @@ function CustomerDashboard() {
             to="/Login"
             className="bg-white border border-slate-100 rounded-3xl p-6 shadow-sm hover:shadow-md transition"
           >
-            <p className="text-xs font-semibold tracking-wider text-rose-700 bg-rose-50 border border-rose-100 px-3 py-1 rounded-full w-fit">
+            <p className="text-xs font-semibold tracking-wider text-blue-700 bg-blue-50 border border-blue-100 px-3 py-1 rounded-full w-fit">
               ACCOUNT
             </p>
             <h2 className="mt-4 text-xl font-extrabold text-slate-900">Profile</h2>
@@ -85,7 +85,7 @@ function CustomerDashboard() {
         </div>
 
         <div className="mt-6 grid grid-cols-1 lg:grid-cols-3 gap-4">
-          <div className="lg:col-span-2 bg-gradient-to-r from-rose-600 to-fuchsia-600 text-white rounded-3xl p-6 sm:p-8 shadow-sm">
+          <div className="lg:col-span-2 bg-gradient-to-r from-blue-600 to-violet-600 text-white rounded-3xl p-6 sm:p-8 shadow-sm">
             <p className="text-sm font-semibold tracking-wide text-white/90">OFFERS</p>
             <h3 className="mt-2 text-2xl font-extrabold">Save more on your next booking</h3>
             <p className="mt-2 text-white/90 text-sm max-w-2xl">
@@ -94,7 +94,7 @@ function CustomerDashboard() {
             <div className="mt-4 flex flex-wrap gap-2">
               <Link
                 to="/book"
-                className="bg-white text-rose-700 px-4 py-2.5 rounded-xl font-extrabold hover:bg-rose-50 transition"
+                className="bg-white text-blue-700 px-4 py-2.5 rounded-xl font-extrabold hover:bg-blue-50 transition"
               >
                 View Deals
               </Link>
