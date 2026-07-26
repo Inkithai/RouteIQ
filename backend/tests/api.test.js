@@ -5,7 +5,7 @@ console.log('🧪 Executing Comprehensive Backend & System Unit Tests...');
 
 // 1. Verify Models
 const busModel = require('../models/Bus');
-const userModel = require('../models/user');
+const userModel = require('../models/User');
 const bookingModel = require('../models/Booking');
 const orgModel = require('../models/Organization');
 
