@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import axios from "axios";
 import { setAuthToken, setAuthUser } from "../lib/auth";
-import { Bus, Shield, User, Key, ArrowRight, CheckCircle2 } from "lucide-react";
+import { Bus, ArrowRight } from "lucide-react";
 
 const API_BASE_URL =
   import.meta.env.VITE_API_BASE_URL || window.location.origin;
@@ -70,18 +70,18 @@ export default function SignupPage() {
   };
 
   return (
-    <div className="min-h-[88vh] flex items-center justify-center bg-gradient-to-br from-indigo-950 via-purple-950 to-slate-900 p-4 sm:p-6">
-      <div className="w-full max-w-md bg-white/10 backdrop-blur-xl rounded-3xl shadow-2xl overflow-hidden border border-indigo-500/30 p-6 sm:p-8">
+    <div className="min-h-[88vh] flex items-center justify-center bg-gradient-to-br from-[#0A0E1A] via-[#111827] to-[#0A0E1A] p-4 sm:p-6">
+      <div className="w-full max-w-md bg-[#111827]/80 backdrop-blur-xl rounded-3xl shadow-2xl overflow-hidden border border-[#374151]/40 p-6 sm:p-8">
         <div className="text-center mb-6">
-          <div className="inline-flex items-center justify-center w-12 h-12 bg-indigo-500/20 text-indigo-400 rounded-2xl mb-3">
+          <div className="inline-flex items-center justify-center w-12 h-12 bg-[#4F6BF6]/15 text-[#4F6BF6] rounded-2xl mb-3">
             <Bus className="w-6 h-6" />
           </div>
-          <h1 className="text-2xl sm:text-3xl font-black text-white">Create Account</h1>
-          <p className="text-indigo-200 text-sm mt-1">Join RouteIQ to track & book seamless bus trips</p>
+          <h1 className="text-2xl sm:text-3xl font-black text-[#F9FAFB]">Create Account</h1>
+          <p className="text-[#9CA3AF] text-sm mt-1">Join RouteIQ — the operating system for modern bus operations</p>
         </div>
 
         {/* Role Selector */}
-        <div className="grid grid-cols-3 gap-2 bg-white/10 p-1.5 rounded-2xl mb-6">
+        <div className="grid grid-cols-3 gap-2 bg-[#1F2937]/40 p-1.5 rounded-2xl mb-6">
           {[
             { id: "customer", label: "Passenger" },
             { id: "driver", label: "Driver" },
@@ -96,8 +96,8 @@ export default function SignupPage() {
               }}
               className={`py-2 text-xs sm:text-sm font-semibold rounded-xl transition-all ${
                 role === r.id
-                  ? "bg-indigo-600 text-white shadow-lg shadow-indigo-500/30"
-                  : "text-indigo-200 hover:text-white"
+                  ? "bg-[#4F6BF6] text-white shadow-lg shadow-[#4F6BF6]/20"
+                  : "text-[#9CA3AF] hover:text-[#F9FAFB]"
               }`}
             >
               {r.label}
@@ -107,7 +107,7 @@ export default function SignupPage() {
 
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
-            <label className="block text-xs font-semibold text-indigo-200 uppercase tracking-wider mb-1">
+            <label className="block text-xs font-semibold text-[#9CA3AF] uppercase tracking-wider mb-1">
               Full Name
             </label>
             <input
@@ -116,13 +116,13 @@ export default function SignupPage() {
               required
               value={form.name}
               onChange={handleChange}
-              className="w-full px-4 py-2.5 bg-white/10 border border-indigo-500/30 rounded-xl focus:bg-white/20 focus:ring-2 focus:ring-indigo-500 focus:outline-none transition text-sm text-white placeholder-indigo-300"
-              placeholder="e.g. Alex Johnson"
+              className="w-full px-4 py-2.5 bg-[#1F2937]/60 border border-[#374151]/40 rounded-xl focus:bg-[#1F2937] focus:ring-2 focus:ring-[#4F6BF6] focus:outline-none transition text-sm text-[#F9FAFB] placeholder-[#9CA3AF]"
+              placeholder="e.g. Rajesh Perera"
             />
           </div>
 
           <div>
-            <label className="block text-xs font-semibold text-indigo-200 uppercase tracking-wider mb-1">
+            <label className="block text-xs font-semibold text-[#9CA3AF] uppercase tracking-wider mb-1">
               Email Address
             </label>
             <input
@@ -131,14 +131,14 @@ export default function SignupPage() {
               required
               value={form.email}
               onChange={handleChange}
-              className="w-full px-4 py-2.5 bg-white/10 border border-indigo-500/30 rounded-xl focus:bg-white/20 focus:ring-2 focus:ring-indigo-500 focus:outline-none transition text-sm text-white placeholder-indigo-300"
-              placeholder="alex@example.com"
+              className="w-full px-4 py-2.5 bg-[#1F2937]/60 border border-[#374151]/40 rounded-xl focus:bg-[#1F2937] focus:ring-2 focus:ring-[#4F6BF6] focus:outline-none transition text-sm text-[#F9FAFB] placeholder-[#9CA3AF]"
+              placeholder="rajesh@example.com"
             />
           </div>
 
           {role === "admin" && (
             <div>
-              <label className="block text-xs font-semibold text-indigo-200 uppercase tracking-wider mb-1">
+              <label className="block text-xs font-semibold text-[#9CA3AF] uppercase tracking-wider mb-1">
                 Admin Authorization Key
               </label>
               <input
@@ -147,14 +147,14 @@ export default function SignupPage() {
                 required
                 value={form.adminKey}
                 onChange={handleChange}
-                className="w-full px-4 py-2.5 bg-white/10 border border-indigo-500/30 rounded-xl focus:bg-white/20 focus:ring-2 focus:ring-indigo-500 focus:outline-none transition text-sm text-white placeholder-indigo-300"
+                className="w-full px-4 py-2.5 bg-[#1F2937]/60 border border-[#374151]/40 rounded-xl focus:bg-[#1F2937] focus:ring-2 focus:ring-[#4F6BF6] focus:outline-none transition text-sm text-[#F9FAFB] placeholder-[#9CA3AF]"
                 placeholder="Enter Secret Admin Key"
               />
             </div>
           )}
 
           <div>
-            <label className="block text-xs font-semibold text-indigo-200 uppercase tracking-wider mb-1">
+            <label className="block text-xs font-semibold text-[#9CA3AF] uppercase tracking-wider mb-1">
               Password
             </label>
             <input
@@ -163,13 +163,13 @@ export default function SignupPage() {
               required
               value={form.password}
               onChange={handleChange}
-              className="w-full px-4 py-2.5 bg-white/10 border border-indigo-500/30 rounded-xl focus:bg-white/20 focus:ring-2 focus:ring-indigo-500 focus:outline-none transition text-sm text-white placeholder-indigo-300"
+              className="w-full px-4 py-2.5 bg-[#1F2937]/60 border border-[#374151]/40 rounded-xl focus:bg-[#1F2937] focus:ring-2 focus:ring-[#4F6BF6] focus:outline-none transition text-sm text-[#F9FAFB] placeholder-[#9CA3AF]"
               placeholder="••••••••"
             />
           </div>
 
           <div>
-            <label className="block text-xs font-semibold text-indigo-200 uppercase tracking-wider mb-1">
+            <label className="block text-xs font-semibold text-[#9CA3AF] uppercase tracking-wider mb-1">
               Confirm Password
             </label>
             <input
@@ -178,13 +178,13 @@ export default function SignupPage() {
               required
               value={form.confirmPassword}
               onChange={handleChange}
-              className="w-full px-4 py-2.5 bg-white/10 border border-indigo-500/30 rounded-xl focus:bg-white/20 focus:ring-2 focus:ring-indigo-500 focus:outline-none transition text-sm text-white placeholder-indigo-300"
+              className="w-full px-4 py-2.5 bg-[#1F2937]/60 border border-[#374151]/40 rounded-xl focus:bg-[#1F2937] focus:ring-2 focus:ring-[#4F6BF6] focus:outline-none transition text-sm text-[#F9FAFB] placeholder-[#9CA3AF]"
               placeholder="••••••••"
             />
           </div>
 
           {error && (
-            <div className="p-3 bg-red-500/20 border border-red-500/50 rounded-xl text-red-200 text-xs font-medium">
+            <div className="p-3 bg-[#F87171]/15 border border-[#F87171]/30 rounded-xl text-[#F87171] text-xs font-medium">
               {error}
             </div>
           )}
@@ -192,15 +192,15 @@ export default function SignupPage() {
           <button
             type="submit"
             disabled={loading}
-            className="w-full py-3 bg-gradient-to-r from-indigo-600 to-purple-600 text-white font-bold rounded-xl shadow-lg shadow-indigo-500/30 hover:from-indigo-700 hover:to-purple-700 transition duration-200 disabled:opacity-50 flex items-center justify-center gap-2"
+            className="w-full py-3 bg-gradient-to-r from-[#4F6BF6] to-[#8B5CF6] text-white font-bold rounded-xl shadow-lg shadow-[#4F6BF6]/20 hover:from-[#3B5BDB] hover:to-[#7C3AED] transition duration-200 disabled:opacity-50 flex items-center justify-center gap-2"
           >
             {loading ? "Creating Account..." : "Sign Up"} <ArrowRight className="w-4 h-4" />
           </button>
         </form>
 
-        <p className="text-center text-xs text-indigo-200 mt-6">
+        <p className="text-center text-xs text-[#9CA3AF] mt-6">
           Already have an account?{" "}
-          <Link to="/Login" className="text-indigo-400 font-semibold hover:text-indigo-300 hover:underline">
+          <Link to="/Login" className="text-[#4F6BF6] font-semibold hover:text-[#22D3EE] hover:underline">
             Log In
           </Link>
         </p>

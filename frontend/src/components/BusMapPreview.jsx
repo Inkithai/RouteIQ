@@ -12,38 +12,38 @@ const API_BASE_URL =
 
 // Colombo Metropolitan & Expressway Routes
 const COLOMBO_KANDY_POLYLINE = [
-  [6.9271, 79.8612], // Colombo Fort Bus Station
-  [6.9487, 79.8593], // Pettah Bus Stand
-  [7.0840, 79.9926], // Kadawatha Interchange
-  [7.2000, 79.9800], // Nittambuwa Station
-  [7.2483, 80.3458], // Mawanella Stop
-  [7.2906, 80.6337], // Kandy Goods Shed Bus Stand
+  [6.9271, 79.8612],
+  [6.9487, 79.8593],
+  [7.0840, 79.9926],
+  [7.2000, 79.9800],
+  [7.2483, 80.3458],
+  [7.2906, 80.6337],
 ];
 
 const COLOMBO_GALLE_POLYLINE = [
-  [6.9271, 79.8612], // Colombo Fort
-  [6.8890, 79.8531], // Wellawatte
-  [6.7905, 79.9057], // Panadura
-  [6.6833, 79.9000], // Kalutara
-  [6.5833, 80.1500], // Beruwala
-  [6.0535, 80.2208], // Galle Bus Stand
+  [6.9271, 79.8612],
+  [6.8890, 79.8531],
+  [6.7905, 79.9057],
+  [6.6833, 79.9000],
+  [6.5833, 80.1500],
+  [6.0535, 80.2208],
 ];
 
 const COLOMBO_NEGOMBO_POLYLINE = [
-  [6.9271, 79.8612], // Colombo Fort
-  [7.0033, 79.8833], // Ja-Ela
-  [7.0833, 79.8833], // Seeduwa
-  [7.1500, 79.8500], // Katunayake Airport
-  [7.2100, 79.8300], // Negombo Bus Stand
+  [6.9271, 79.8612],
+  [7.0033, 79.8833],
+  [7.0833, 79.8833],
+  [7.1500, 79.8500],
+  [7.2100, 79.8300],
 ];
 
 const COLOMBO_MATARA_POLYLINE = [
-  [6.9271, 79.8612], // Colombo Fort
-  [6.6833, 79.9000], // Kalutara
-  [6.4500, 80.0500], // Ambalangoda
-  [6.2500, 80.1000], // Hikkaduwa
-  [6.0535, 80.2208], // Galle
-  [5.9485, 80.5353], // Matara Bus Stand
+  [6.9271, 79.8612],
+  [6.6833, 79.9000],
+  [6.4500, 80.0500],
+  [6.2500, 80.1000],
+  [6.0535, 80.2208],
+  [5.9485, 80.5353],
 ];
 
 const SRI_LANKA_STOPS = [
@@ -64,7 +64,7 @@ const SRI_LANKA_STOPS = [
 
 function createBusIcon(status = "Active") {
   const isDelayed = status === "Delayed";
-  const color = isDelayed ? "#ef4444" : "#2563eb";
+  const color = isDelayed ? "#F87171" : "#4F6BF6";
 
   const svgMarker = `
     <div style="
@@ -87,10 +87,10 @@ function createBusIcon(status = "Active") {
         right: -2px;
         width: 12px;
         height: 12px;
-        background: #10b981;
+        background: #34D399;
         border-radius: 50%;
         border: 2px solid white;
-        box-shadow: 0 0 8px #10b981;
+        box-shadow: 0 0 8px #34D399;
       "></span>
     </div>
   `;
@@ -158,7 +158,6 @@ export default function BusMapPreview({ buses = [] }) {
 
   const activeFleet = buses && buses.length > 0 ? buses : liveBuses;
 
-  // Default to Sri Lanka Central Center (Colombo)
   const validCenter = useMemo(() => {
     const firstValid = activeFleet.find(
       (b) => Number.isFinite(parseFloat(b.latitude)) && Number.isFinite(parseFloat(b.longitude))
@@ -169,30 +168,30 @@ export default function BusMapPreview({ buses = [] }) {
   }, [activeFleet]);
 
   return (
-    <div className="h-[520px] sm:h-[620px] w-full rounded-3xl overflow-hidden shadow-2xl border border-slate-800 relative group">
+    <div className="h-[520px] sm:h-[620px] w-full rounded-3xl overflow-hidden shadow-2xl border border-[#374151]/30 relative group">
       {/* Sri Lanka Live Telemetry Overlay */}
-      <div className="absolute top-4 left-4 z-[1000] bg-slate-900/90 backdrop-blur-md px-4 py-2 rounded-2xl border border-slate-700 shadow-lg flex items-center gap-3 text-xs font-extrabold text-white">
-        <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-ping"></span>
-        <Radio className="w-4 h-4 text-blue-500" /> 🇱🇰 Sri Lanka Express Telemetry Radar
+      <div className="absolute top-4 left-4 z-[1000] bg-[#111827]/90 backdrop-blur-md px-4 py-2 rounded-2xl border border-[#374151]/30 shadow-lg flex items-center gap-3 text-xs font-extrabold text-[#F9FAFB]">
+        <span className="w-2.5 h-2.5 rounded-full bg-[#34D399] animate-ping"></span>
+        <Radio className="w-4 h-4 text-[#4F6BF6]" /> 🇱🇰 Sri Lanka Express Telemetry Radar
       </div>
 
       {/* Colombo Route Legend */}
-      <div className="absolute bottom-4 left-4 z-[1000] bg-slate-900/90 backdrop-blur-md px-4 py-3 rounded-2xl border border-slate-700 shadow-lg text-xs text-white space-y-1.5 max-w-[240px]">
-        <p className="font-extrabold text-white text-[10px] uppercase tracking-wider mb-2">🗺️ Colombo Route Corridors</p>
+      <div className="absolute bottom-4 left-4 z-[1000] bg-[#111827]/90 backdrop-blur-md px-4 py-3 rounded-2xl border border-[#374151]/30 shadow-lg text-xs text-[#F9FAFB] space-y-1.5 max-w-[240px]">
+        <p className="font-extrabold text-[#F9FAFB] text-[10px] uppercase tracking-wider mb-2">🗺️ Colombo Route Corridors</p>
         <div className="flex items-center gap-2">
-          <span className="w-4 h-1 rounded-full bg-blue-600"></span>
+          <span className="w-4 h-1 rounded-full bg-[#4F6BF6]"></span>
           <span className="text-[11px]">Colombo → Kandy (A1)</span>
         </div>
         <div className="flex items-center gap-2">
-          <span className="w-4 h-1 rounded-full bg-indigo-600"></span>
+          <span className="w-4 h-1 rounded-full bg-[#8B5CF6]"></span>
           <span className="text-[11px]">Colombo → Galle (E01)</span>
         </div>
         <div className="flex items-center gap-2">
-          <span className="w-4 h-1 rounded-full bg-green-600"></span>
+          <span className="w-4 h-1 rounded-full bg-[#34D399]"></span>
           <span className="text-[11px]">Colombo → Negombo (A3)</span>
         </div>
         <div className="flex items-center gap-2">
-          <span className="w-4 h-1 rounded-full bg-amber-500"></span>
+          <span className="w-4 h-1 rounded-full bg-[#FBBF24]"></span>
           <span className="text-[11px]">Colombo → Matara (Southern)</span>
         </div>
       </div>
@@ -207,22 +206,22 @@ export default function BusMapPreview({ buses = [] }) {
         {/* Colombo → Kandy Expressway (A1) */}
         <Polyline
           positions={COLOMBO_KANDY_POLYLINE}
-          pathOptions={{ color: "#2563eb", weight: 5, opacity: 0.85, dashArray: "10, 8" }}
+          pathOptions={{ color: "#4F6BF6", weight: 5, opacity: 0.85, dashArray: "10, 8" }}
         />
         {/* Colombo → Galle Southern Expressway (E01) */}
         <Polyline
           positions={COLOMBO_GALLE_POLYLINE}
-          pathOptions={{ color: "#4f46e5", weight: 4, opacity: 0.7, dashArray: "8, 6" }}
+          pathOptions={{ color: "#8B5CF6", weight: 4, opacity: 0.7, dashArray: "8, 6" }}
         />
         {/* Colombo → Negombo / Airport (A3) */}
         <Polyline
           positions={COLOMBO_NEGOMBO_POLYLINE}
-          pathOptions={{ color: "#16a34a", weight: 4, opacity: 0.7, dashArray: "8, 6" }}
+          pathOptions={{ color: "#34D399", weight: 4, opacity: 0.7, dashArray: "8, 6" }}
         />
         {/* Colombo → Matara Southern Route */}
         <Polyline
           positions={COLOMBO_MATARA_POLYLINE}
-          pathOptions={{ color: "#f59e0b", weight: 3, opacity: 0.6, dashArray: "6, 5" }}
+          pathOptions={{ color: "#FBBF24", weight: 3, opacity: 0.6, dashArray: "6, 5" }}
         />
 
         {/* Bus Stop Circle Markers */}
@@ -231,14 +230,14 @@ export default function BusMapPreview({ buses = [] }) {
             key={i}
             center={[stop.lat, stop.lng]}
             radius={8}
-            pathOptions={{ color: "#2563eb", fillColor: "#ffffff", fillOpacity: 1, weight: 3 }}
+            pathOptions={{ color: "#4F6BF6", fillColor: "#ffffff", fillOpacity: 1, weight: 3 }}
           >
             <Popup>
               <div className="p-1">
-                <p className="font-extrabold text-slate-900 text-xs flex items-center gap-1">
-                  <MapPin className="w-3.5 h-3.5 text-blue-600" /> {stop.name}
+                <p className="font-extrabold text-[#0A0E1A] text-xs flex items-center gap-1">
+                  <MapPin className="w-3.5 h-3.5 text-[#4F6BF6]" /> {stop.name}
                 </p>
-                <p className="text-[10px] text-slate-500 font-medium">Station #{stop.stopSeq} - Express Corridor</p>
+                <p className="text-[10px] text-[#9CA3AF] font-medium">Station #{stop.stopSeq} - Express Corridor</p>
               </div>
             </Popup>
           </CircleMarker>
@@ -257,27 +256,27 @@ export default function BusMapPreview({ buses = [] }) {
             <Marker key={bus._id || bus.busNumber} position={[lat, lng]} icon={createBusIcon(bus.status)}>
               <Popup className="custom-popup">
                 <div className="p-1 min-w-[200px]">
-                  <div className="flex items-center justify-between border-b pb-2 mb-2">
-                    <span className="font-black text-slate-900 text-base">{bus.busNumber}</span>
+                  <div className="flex items-center justify-between border-b border-[#374151]/30 pb-2 mb-2">
+                    <span className="font-black text-[#F9FAFB] text-base">{bus.busNumber}</span>
                     <span
                       className={`px-2 py-0.5 text-[10px] font-black rounded-full ${
                         bus.status === "Delayed"
-                          ? "bg-blue-100 text-blue-700"
-                          : "bg-emerald-100 text-emerald-700"
+                          ? "bg-[#F87171]/10 text-[#F87171] border border-[#F87171]/20"
+                          : "bg-[#34D399]/10 text-[#34D399] border border-[#34D399]/20"
                       }`}
                     >
                       {bus.status || "Active"}
                     </span>
                   </div>
-                  <p className="text-xs text-slate-600 font-medium mb-1">
+                  <p className="text-xs text-[#9CA3AF] font-medium mb-1">
                     📍 <strong>Route:</strong> {bus.route}
                   </p>
-                  <p className="text-xs text-slate-600 font-medium mb-1">
+                  <p className="text-xs text-[#9CA3AF] font-medium mb-1">
                     👤 <strong>Driver:</strong> {bus.driverName}
                   </p>
-                  <div className="mt-2 pt-2 border-t flex items-center justify-between text-[11px] font-mono">
-                    <span className="text-emerald-600 font-bold">⚡ {bus.speedKmph || 50} km/h</span>
-                    <span className="text-blue-600 font-bold">⏱ ETA: {etaMinutes} mins</span>
+                  <div className="mt-2 pt-2 border-t border-[#374151]/30 flex items-center justify-between text-[11px] font-mono">
+                    <span className="text-[#34D399] font-bold">⚡ {bus.speedKmph || 50} km/h</span>
+                    <span className="text-[#4F6BF6] font-bold">⏱ ETA: {etaMinutes} mins</span>
                   </div>
                 </div>
               </Popup>

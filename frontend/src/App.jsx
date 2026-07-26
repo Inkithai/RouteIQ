@@ -17,7 +17,7 @@ import AiChatbotModal from "./components/AiChatbotModal";
 export default function App() {
   return (
     <ErrorBoundary>
-      <div className="min-h-screen bg-slate-950 font-sans antialiased text-slate-100">
+      <div className="min-h-screen bg-[#0A0E1A] font-sans antialiased text-[#F9FAFB]">
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
