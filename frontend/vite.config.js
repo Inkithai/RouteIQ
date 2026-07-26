@@ -9,7 +9,15 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const fromNodeModules = (...segments) => path.resolve(__dirname, 'node_modules', ...segments);
 
 export default defineConfig({
-  plugins: [react(), tailwindcss()],
+  plugins: [
+    react({
+      babel: {
+        plugins: []
+      },
+      fastRefresh: false
+    }),
+    tailwindcss()
+  ],
   resolve: {
     alias: [
       // Keep every React entrypoint on the same physical package. This prevents
