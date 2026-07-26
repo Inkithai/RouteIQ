@@ -4,6 +4,7 @@ import './i18n';
 import { BrowserRouter } from "react-router-dom";
 import App from "./App";
 import "./index.css";
+import "./App.css";
 
 // Service Worker PWA Registration
 if ("serviceWorker" in navigator && import.meta.env.PROD) {
