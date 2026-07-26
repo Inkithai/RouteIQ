@@ -1,182 +1,152 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { ArrowRight, Play, Bus, MapPinned, Sparkles } from "lucide-react";
 
 function Hero() {
   return (
-    <section className="relative overflow-hidden w-full">
-      {/* Background */}
-      <div className="absolute inset-0 bg-gradient-to-b from-blue-50 via-white to-white"></div>
-      <div className="absolute -top-24 -right-24 h-72 w-72 rounded-full bg-blue-200/40 blur-3xl"></div>
-      <div className="absolute -bottom-24 -left-24 h-72 w-72 rounded-full bg-violet-200/25 blur-3xl"></div>
-      <div className="absolute top-24 left-1/2 -translate-x-1/2 h-[520px] w-[520px] rounded-full bg-gradient-to-tr from-blue-200/30 via-white to-violet-200/20 blur-3xl"></div>
+    <section className="relative overflow-hidden w-full min-h-[85vh] flex items-center bg-[#0A0E1A]">
+      {/* Background orbs */}
+      <div className="absolute -top-32 -right-32 h-[600px] w-[600px] rounded-full bg-[#4F6BF6]/12 blur-[120px] pointer-events-none" />
+      <div className="absolute -bottom-32 -left-32 h-[500px] w-[500px] rounded-full bg-[#8B5CF6]/10 blur-[100px] pointer-events-none" />
+      <div className="absolute top-1/3 left-1/2 -translate-x-1/2 h-[400px] w-[400px] rounded-full bg-[#22D3EE]/8 blur-[80px] pointer-events-none" />
 
-      <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-16 sm:pt-20 pb-10 sm:pb-14">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-          {/* Left */}
-          <div className="lg:col-span-7">
-            <div className="flex flex-wrap items-center gap-2">
-              <p className="text-xs font-semibold tracking-wider text-blue-700 bg-blue-50 border border-blue-100 px-3 py-1 rounded-full w-fit">
-                SAVE MORE ON EVERY TRIP
-              </p>
-              <p className="text-xs font-semibold tracking-wider text-slate-700 bg-white border border-slate-200 px-3 py-1 rounded-full w-fit">
-                Use code <span className="font-extrabold text-slate-900">ROUTEIQ20</span>
-              </p>
+      {/* Grid pattern */}
+      <div className="absolute inset-0 opacity-30" style={{
+        backgroundImage: 'linear-gradient(rgba(79,107,246,.06) 1px, transparent 1px), linear-gradient(90deg, rgba(79,107,246,.06) 1px, transparent 1px)',
+        backgroundSize: '48px 48px',
+        maskImage: 'linear-gradient(to bottom, black 40%, transparent 90%)',
+      }} />
+
+      <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-20 pb-16">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          {/* Left — Copy */}
+          <div>
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-[#22D3EE]/10 border border-[#22D3EE]/20 rounded-lg text-[11px] font-extrabold uppercase tracking-[.13em] text-[#22D3EE]">
+              <span className="w-[7px] h-[7px] rounded-full bg-[#34D399] shadow-[0_0_0_5px_rgba(52,211,153,.15)]" />
+              AI-powered transit intelligence
             </div>
-            <h2 className="mt-4 text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight tracking-tight text-slate-900">
-              Book bus tickets.
-              <span className="text-blue-600"> Track your ride live.</span>
-              <br />
-              Travel with confidence.
+
+            <h2 className="mt-6 text-[44px] sm:text-[56px] lg:text-[64px] font-black leading-[1.06] tracking-[-0.04em] text-[#F9FAFB]">
+              The operating system<br />for modern <em className="text-[#4F6BF6] not-italic">bus operations</em>.
             </h2>
-            <p className="mt-4 text-base sm:text-lg text-slate-600 font-medium max-w-2xl leading-relaxed">
-              Discover routes, compare buses, grab deals, and reach your destination on time — with real-time tracking and smart alerts.
+
+            <p className="mt-5 text-base sm:text-lg text-[#9CA3AF] font-medium max-w-2xl leading-relaxed">
+              RouteIQ gives bus operators real-time fleet tracking, AI-powered route optimization, and online ticketing — one platform to run your entire operation.
             </p>
 
-            {/* Search Form */}
-            <div className="mt-7 bg-white rounded-3xl p-4 sm:p-6 shadow-sm border border-slate-100">
-              <div className="p-4 sm:p-5 bg-gradient-to-r from-blue-50 to-violet-50 rounded-2xl border border-white/60">
-                <div className="grid grid-cols-1 md:grid-cols-12 gap-4">
-                  <div className="md:col-span-4 h-14 flex items-center bg-white border border-slate-200 rounded-2xl shadow-sm focus-within:ring-2 focus-within:ring-blue-300 transition">
-                    <span className="px-3 text-blue-600 text-2xl">🏙️</span>
-                    <input
-                      type="text"
-                      placeholder="From (e.g., Colombo Fort)"
-                      className="w-full h-full px-1 border-none outline-none bg-transparent text-slate-900 placeholder:text-slate-400"
-                    />
-                  </div>
-
-                  <div className="md:col-span-4 h-14 flex items-center bg-white border border-slate-200 rounded-2xl shadow-sm focus-within:ring-2 focus-within:ring-blue-300 transition">
-                    <span className="px-3 text-blue-600 text-2xl">🏙️</span>
-                    <input
-                      type="text"
-                      placeholder="To (e.g., Kandy)"
-                      className="w-full h-full px-1 border-none outline-none bg-transparent text-slate-900 placeholder:text-slate-400"
-                    />
-                  </div>
-
-                  <div className="md:col-span-2 h-14 flex items-center bg-white border border-slate-200 rounded-2xl shadow-sm focus-within:ring-2 focus-within:ring-blue-300 transition">
-                    <span className="px-3 text-blue-600 text-xl">📅</span>
-                    <input
-                      type="date"
-                      className="w-full h-full px-1 border-none outline-none bg-transparent text-slate-900"
-                    />
-                  </div>
-
-                  <button className="md:col-span-2 h-14 bg-blue-600 hover:bg-blue-700 text-white px-6 rounded-2xl font-semibold shadow-sm transition">
-                    Search Buses
-                  </button>
-                </div>
-              </div>
-
-              <div className="mt-5 flex flex-wrap gap-3">
-                <Link
-                  to="/book"
-                  className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2.5 rounded-xl shadow-sm transition font-semibold"
-                >
-                  Book Ticket
-                </Link>
-                <Link
-                  to="/BusMapPreview"
-                  className="bg-white hover:bg-slate-50 text-slate-900 px-4 py-2.5 rounded-xl shadow-sm transition border border-slate-200 font-semibold"
-                >
-                  Live Tracking
-                </Link>
-              </div>
+            <div className="mt-8 flex flex-wrap gap-3">
+              <Link
+                to="/Signup"
+                className="inline-flex items-center gap-2 h-12 px-5 bg-[#4F6BF6] hover:bg-[#3B5BDB] text-white rounded-[10px] font-extrabold text-[13px] shadow-lg shadow-[#4F6BF6]/20 transition hover:translate-y-[-2px]"
+              >
+                Start free trial <ArrowRight size={17} />
+              </Link>
+              <a
+                href="#demo"
+                className="inline-flex items-center gap-2 h-12 px-5 border border-[#374151] bg-[#1F2937]/44 text-[#F9FAFB] rounded-[10px] font-extrabold text-[13px] transition hover:translate-y-[-2px] hover:border-[#9CA3AF]"
+              >
+                <span className="w-[21px] h-[21px] rounded-full bg-[#F9FAFB] text-[#0A0E1A] grid place-items-center"><Play size={12} fill="currentColor" /></span> Watch 2-min demo
+              </a>
             </div>
 
-            <div className="mt-6">
-              <p className="text-sm font-extrabold text-slate-900">Trending destinations</p>
+            {/* Trust indicators */}
+            <div className="mt-8 flex items-center gap-3">
+              <div className="flex -space-x-1.5">
+                <span className="w-[25px] h-[25px] rounded-full bg-[#4F6BF6]/15 text-[#4F6BF6] border-2 border-[#0A0E1A] grid place-items-center text-[8px] font-extrabold">SL</span>
+                <span className="w-[25px] h-[25px] rounded-full bg-[#8B5CF6]/15 text-[#8B5CF6] border-2 border-[#0A0E1A] grid place-items-center text-[8px] font-extrabold">CT</span>
+                <span className="w-[25px] h-[25px] rounded-full bg-[#22D3EE]/15 text-[#22D3EE] border-2 border-[#0A0E1A] grid place-items-center text-[8px] font-extrabold">PK</span>
+                <span className="w-[25px] h-[25px] rounded-full bg-[#374151] text-[#9CA3AF] border-2 border-[#0A0E1A] grid place-items-center text-[8px] font-extrabold">+</span>
+              </div>
+              <span className="text-[11px] text-[#9CA3AF]">
+                Trusted by <b className="text-[#F9FAFB]">120+ operators</b> across Sri Lanka
+              </span>
+            </div>
+
+            {/* Popular routes */}
+            <div className="mt-8">
+              <p className="text-[11px] font-extrabold text-[#F9FAFB] uppercase tracking-wider">Popular routes</p>
               <div className="mt-3 flex flex-wrap gap-2">
-                {["Kandy", "Galle", "Negombo", "Nuwara Eliya", "Jaffna", "Matara"].map((d) => (
+                {["Colombo → Kandy", "Colombo → Galle", "Colombo → Jaffna", "Expressway E01", "Colombo → Negombo"].map((d) => (
                   <span
                     key={d}
-                    className="text-sm bg-white border border-slate-200 hover:border-blue-200 hover:bg-blue-50/60 transition px-3 py-1.5 rounded-full text-slate-800"
+                    className="text-[12px] bg-[#1F2937]/60 border border-[#374151]/40 hover:border-[#4F6BF6]/30 hover:bg-[#4F6BF6]/8 transition px-3 py-1.5 rounded-full text-[#9CA3AF] hover:text-[#F9FAFB]"
                   >
-                    {d}
+                    <MapPinned size={12} className="inline mr-1 opacity-60" /> {d}
                   </span>
                 ))}
               </div>
             </div>
           </div>
 
-          {/* Right illustration (no external image) */}
-          <div className="lg:col-span-5 hidden lg:block">
-            <div className="relative rounded-3xl border border-slate-100 bg-white shadow-sm overflow-hidden">
-              <div className="relative h-[520px]">
-                <img
-                  src="https://images.unsplash.com/photo-1508609349937-5ec4ae374ebf?auto=format&fit=crop&w=1200&q=80"
-                  alt="Travel by bus"
-                  className="absolute inset-0 w-full h-full object-cover"
-                  loading="lazy"
-                />
-                <div className="absolute inset-0 bg-gradient-to-tr from-black/65 via-black/25 to-transparent" />
-
-                <div className="absolute left-6 right-6 bottom-6 rounded-3xl border border-white/15 bg-black/30 backdrop-blur p-5 text-white">
-                  <p className="text-xs font-semibold tracking-wider text-white/90">LIVE TRACKING</p>
-                  <p className="mt-2 text-xl font-extrabold">See your bus on the map, instantly</p>
-                  <p className="mt-1 text-sm text-white/90">
-                    Track location, check ETA, and stay updated during the journey.
-                  </p>
-                  <div className="mt-4 flex flex-wrap gap-2">
-                    <span className="text-xs font-semibold px-3 py-1 rounded-full bg-white/10 border border-white/15">Dark Map</span>
-                    <span className="text-xs font-semibold px-3 py-1 rounded-full bg-white/10 border border-white/15">ETA</span>
-                    <span className="text-xs font-semibold px-3 py-1 rounded-full bg-white/10 border border-white/15">Alerts</span>
-                  </div>
+          {/* Right — Dashboard Preview */}
+          <div className="hidden lg:block">
+            <div className="relative rounded-[16px] border border-[#374151]/20 bg-[#111827] shadow-[0_30px_70px_rgba(0,0,0,.4)] overflow-hidden p-6">
+              {/* Mock dashboard header */}
+              <div className="flex items-center justify-between mb-4">
+                <div className="flex items-center gap-2">
+                  <span className="w-[23px] h-[23px] rounded-[5px] bg-[#4F6BF6]/15 text-[#4F6BF6] grid place-items-center">
+                    <Bus size={13} />
+                  </span>
+                  <span className="text-[10px] font-extrabold text-[#F9FAFB]">RouteIQ</span>
+                  <span className="w-[1px] h-[12px] bg-[#374151]" />
+                  <span className="text-[10px] font-extrabold text-[#9CA3AF]">Command center</span>
                 </div>
-
-                <div className="relative p-6">
-                  <div className="flex items-center justify-between">
-                    <p className="text-sm font-extrabold text-white">Today’s Deals</p>
-                    <span className="text-xs font-semibold tracking-wider text-white bg-white/10 border border-white/15 px-3 py-1 rounded-full">
-                      LIMITED
-                    </span>
-                  </div>
-
-                  <div className="mt-5 rounded-2xl border border-white/25 bg-black/45 backdrop-blur p-5 text-white">
-                    <div className="flex items-center justify-between">
-                      <div>
-                        <p className="text-xs text-white/80">From</p>
-                        <p className="text-lg font-extrabold">Colombo</p>
-                      </div>
-                      <div className="text-blue-300 font-extrabold">→</div>
-                      <div className="text-right">
-                        <p className="text-xs text-white/80">To</p>
-                        <p className="text-lg font-extrabold">Kandy</p>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="mt-4 grid grid-cols-3 gap-3">
-                    <div className="rounded-xl border border-white/20 bg-black/35 backdrop-blur p-3">
-                      <p className="text-[11px] text-white/80">Discount</p>
-                      <p className="mt-1 text-sm font-bold">20%</p>
-                    </div>
-                    <div className="rounded-xl border border-white/20 bg-black/35 backdrop-blur p-3">
-                      <p className="text-[11px] text-white/80">Starts from</p>
-                      <p className="mt-1 text-sm font-bold">LKR 450</p>
-                    </div>
-                    <div className="rounded-xl border border-white/20 bg-black/35 backdrop-blur p-3">
-                      <p className="text-[11px] text-white/80">Live tracking</p>
-                      <p className="mt-1 text-sm font-bold">Available</p>
-                    </div>
-                  </div>
-
-                  <div className="mt-4 flex items-center justify-between text-xs">
-                    <span className="text-white/80">Offer validity</span>
-                    <span className="font-semibold">Today only</span>
-                  </div>
+                <div className="flex items-center gap-2">
+                  <span className="w-[6px] h-[6px] rounded-full bg-[#34D399] shadow-[0_0_0_3px_rgba(52,211,153,.2)]" />
+                  <span className="text-[10px] font-extrabold text-[#34D399]">Live</span>
                 </div>
+              </div>
 
-                <div className="mt-5 grid grid-cols-2 gap-3">
-                  <div className="rounded-2xl border border-white/25 bg-black/30 backdrop-blur p-4 text-white">
-                    <p className="text-xs text-white/80">Free Cancellation</p>
-                    <p className="mt-1 text-sm font-bold">On select buses</p>
-                  </div>
-                  <div className="rounded-2xl border border-white/25 bg-black/30 backdrop-blur p-4 text-white">
-                    <p className="text-xs text-white/80">Trusted operators</p>
-                    <p className="mt-1 text-sm font-bold">Top rated</p>
-                  </div>
+              {/* Stats row */}
+              <div className="grid grid-cols-3 gap-3 mb-4">
+                <div className="bg-[#1F2937]/60 border border-[#374151]/30 rounded-xl p-3">
+                  <p className="text-[8px] text-[#9CA3AF] uppercase tracking-wider">Active buses</p>
+                  <p className="text-[16px] font-bold text-[#F9FAFB] mt-1 font-mono">42</p>
                 </div>
+                <div className="bg-[#1F2937]/60 border border-[#374151]/30 rounded-xl p-3">
+                  <p className="text-[8px] text-[#9CA3AF] uppercase tracking-wider">On-time</p>
+                  <p className="text-[16px] font-bold text-[#34D399] mt-1 font-mono">98.4%</p>
+                </div>
+                <div className="bg-[#1F2937]/60 border border-[#374151]/30 rounded-xl p-3">
+                  <p className="text-[8px] text-[#9CA3AF] uppercase tracking-wider">Routes</p>
+                  <p className="text-[16px] font-bold text-[#4F6BF6] mt-1 font-mono">18</p>
+                </div>
+              </div>
+
+              {/* Route list */}
+              <div className="space-y-2">
+                <div className="flex items-center gap-2 bg-[#1F2937]/30 border border-[#374151]/20 rounded-lg px-3 py-2">
+                  <span className="w-[6px] h-[24px] rounded-[5px] bg-[#34D399]" />
+                  <div className="flex-1">
+                    <b className="text-[10px] text-[#F9FAFB]">Colombo → Kandy</b>
+                    <small className="text-[8px] text-[#9CA3AF] block">12 stops · 98% on time</small>
+                  </div>
+                  <strong className="text-[10px] font-mono text-[#F9FAFB]">09:42</strong>
+                </div>
+                <div className="flex items-center gap-2 bg-[#1F2937]/30 border border-[#374151]/20 rounded-lg px-3 py-2">
+                  <span className="w-[6px] h-[24px] rounded-[5px] bg-[#4F6BF6]" />
+                  <div className="flex-1">
+                    <b className="text-[10px] text-[#F9FAFB]">Colombo → Galle</b>
+                    <small className="text-[8px] text-[#9CA3AF] block">8 stops · In transit</small>
+                  </div>
+                  <strong className="text-[10px] font-mono text-[#F9FAFB]">10:16</strong>
+                </div>
+                <div className="flex items-center gap-2 bg-[#1F2937]/30 border border-[#374151]/20 rounded-lg px-3 py-2">
+                  <span className="w-[6px] h-[24px] rounded-[5px] bg-[#8B5CF6]" />
+                  <div className="flex-1">
+                    <b className="text-[10px] text-[#F9FAFB]">Expressway E01</b>
+                    <small className="text-[8px] text-[#9CA3AF] block">5 stops · Ready</small>
+                  </div>
+                  <strong className="text-[10px] font-mono text-[#F9FAFB]">11:05</strong>
+                </div>
+              </div>
+
+              {/* AI suggestion */}
+              <div className="mt-4 flex items-center gap-2 bg-[#8B5CF6]/8 border border-[#8B5CF6]/15 rounded-lg px-3 py-2">
+                <Sparkles size={15} className="text-[#8B5CF6]" />
+                <span className="text-[8px] text-[#8B5CF6]">
+                  <b>AI suggestion:</b> Reassign Bus 17 to reduce 23 min delay on Route 04.
+                </span>
               </div>
             </div>
           </div>
