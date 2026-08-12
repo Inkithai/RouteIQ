@@ -1,34 +1,44 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import tailwindcss from '@tailwindcss/vite';
-import path from 'path';
-import { fileURLToPath } from 'url';
 
-const __dirname = path.dirname(fileURLToPath(import.meta.url));
+/**
+ * plugin-react 6 / Vite 8 no longer export RefreshRuntime.getRefreshReg.
+ * Cached or older transforms still call it and crash the app with a blank page:
+ *   TypeError: RefreshRuntime.getRefreshReg is not a function
+ */
+function reactRefreshCompat() {
+  return {
+    name: 'react-refresh-getRefreshReg-compat',
+    enforce: 'pre',
+    transform(code, id) {
+      const isRefreshRuntime =
+        id === '/@react-refresh' ||
+        id.endsWith('/@react-refresh') ||
+        id.includes('refresh-runtime.js');
 
-const fromNodeModules = (...segments) => path.resolve(__dirname, 'node_modules', ...segments);
+      if (!isRefreshRuntime || code.includes('export function getRefreshReg')) {
+        return null;
+      }
+
+      return {
+        code: `${code}
+
+export function getRefreshReg(filename) {
+  return (type, id) => {
+    register(type, filename + ' ' + id);
+  };
+}
+`,
+        map: null
+      };
+    }
+  };
+}
 
 export default defineConfig({
-  plugins: [
-    react({
-      babel: {
-        plugins: []
-      },
-      fastRefresh: false
-    }),
-    tailwindcss()
-  ],
+  plugins: [react(), reactRefreshCompat(), tailwindcss()],
   resolve: {
-    alias: [
-      // Keep every React entrypoint on the same physical package. This prevents
-      // Vite's dependency optimizer from serving mixed React instances after it
-      // discovers new deps during development, which causes "Invalid hook call".
-      { find: /^react$/, replacement: fromNodeModules('react', 'index.js') },
-      { find: /^react\/jsx-runtime$/, replacement: fromNodeModules('react', 'jsx-runtime.js') },
-      { find: /^react\/jsx-dev-runtime$/, replacement: fromNodeModules('react', 'jsx-dev-runtime.js') },
-      { find: /^react-dom$/, replacement: fromNodeModules('react-dom', 'index.js') },
-      { find: /^react-dom\/client$/, replacement: fromNodeModules('react-dom', 'client.js') }
-    ],
     dedupe: [
       'react',
       'react/jsx-runtime',
@@ -40,7 +50,6 @@ export default defineConfig({
     ]
   },
   optimizeDeps: {
-    entries: ['index.html', 'src/**/*.{js,jsx,ts,tsx}'],
     include: [
       'axios',
       'i18next',
@@ -60,6 +69,7 @@ export default defineConfig({
   server: {
     port: 5173,
     host: true,
+    allowedHosts: true,
     proxy: {
       '/api': {
         target: 'http://localhost:5000',
