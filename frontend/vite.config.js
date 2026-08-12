@@ -2,42 +2,11 @@ import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import tailwindcss from '@tailwindcss/vite';
 
-/**
- * plugin-react 6 / Vite 8 no longer export RefreshRuntime.getRefreshReg.
- * Cached or older transforms still call it and crash the app with a blank page:
- *   TypeError: RefreshRuntime.getRefreshReg is not a function
- */
-function reactRefreshCompat() {
-  return {
-    name: 'react-refresh-getRefreshReg-compat',
-    enforce: 'pre',
-    transform(code, id) {
-      const isRefreshRuntime =
-        id === '/@react-refresh' ||
-        id.endsWith('/@react-refresh') ||
-        id.includes('refresh-runtime.js');
-
-      if (!isRefreshRuntime || code.includes('export function getRefreshReg')) {
-        return null;
-      }
-
-      return {
-        code: `${code}
-
-export function getRefreshReg(filename) {
-  return (type, id) => {
-    register(type, filename + ' ' + id);
-  };
-}
-`,
-        map: null
-      };
-    }
-  };
-}
-
+// Keep the official React refresh runtime unmodified. Patching it can cause Vite to
+// load incompatible React runtime modules, which in turn produces invalid-hook-call
+// errors even when a component follows the Rules of Hooks.
 export default defineConfig({
-  plugins: [react(), reactRefreshCompat(), tailwindcss()],
+  plugins: [react(), tailwindcss()],
   resolve: {
     dedupe: [
       'react',
